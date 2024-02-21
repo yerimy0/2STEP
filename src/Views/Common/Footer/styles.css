@@ -5,12 +5,12 @@
 }
 
 .logo {
-    width: 500px;
+    width: 50px;
     height: auto;
 }
 
 .footer {
-    background-color: skyblue;
+    background-color: #2B3BD0;
     color: black;
     display: flex;
     justify-content: space-between;
