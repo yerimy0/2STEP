@@ -8,19 +8,22 @@
 header {
     background-color: white;
     color: black;
+    max-width: 1216px;
+    min-width: 1216px;
     height: 82px;
     margin:auto;
 }
 
 .container {
     max-width: 1216px;
-    margin: 0;
+    min-width: 1216px;
+    position: relative;
+    height: 65px;
 }
 
 .logo {
     float: left;
     width: 100%;
-    margin: auto;
 }
 
 nav ul {
@@ -37,8 +40,9 @@ nav ul li {
     display: flex;
     max-width: 1216px;
     min-width: 1216px;
-    margin: auto;
     justify-content: space-between;
+    margin: auto;
+    position: relative;
 }
 
 .menu {
@@ -49,4 +53,12 @@ nav ul li {
 .user-menu {
     float: right;
     margin-top: 10px;
+    position: absolute;
+    right: 0;
+}
+
+.menu a,
+.user-menu a {
+    color: black;
+    font-weight: bold;
 }

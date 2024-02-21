@@ -5,23 +5,29 @@
 }
 
 .logo {
-    width: 50px;
+    width: 150px;
     height: auto;
 }
 
-.footer {
+.container {
+    max-width: 1216px;
+    min-width: 1216px;
     background-color: #2B3BD0;
     color: black;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    bottom: 0px;
+	position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.office {
+.company {
     text-align: center;
 }
 
-.customer {
+.customer service {
     text-align: right;
 }
