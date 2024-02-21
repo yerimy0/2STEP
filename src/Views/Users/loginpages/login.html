@@ -7,23 +7,16 @@
     <title>LOGIN</title>
   </head>
   <body>
-    <div class="form">
-      <form action="" class="login__form">
-        <h1 class=""login__title>LOGIN</h1>
-          <div class="login__inputs">
-            <div class="login__box">
-              <input type="email" placeholder="이메일을 입력해주세요" required class="login__input">
-            </div>
-            <div class="login__box">
-              <input type="password" placeholder="비밀번호를 입력해주세요" required class="login__input">
-            </div> 
-          </div>
-          <button type="submit" class="login__button">로그인</button>
-          <button type="submit" class="signup__button">회원가입</button>
-          <div class="login__admin">
-            <a href="#">관리자로 로그인하기</a>
-          </div>
-      </form>
+    <div>
+      <h1>LOGIN</h1>
+      <input type="email" id="email" placeholder="이메일을 입력하세요">
+      <input type="password" id="password" placeholder="비밀번호를 입력하세요">
+      <div class="btn-container">
+        <button class="login-btn" onclick="login()">로그인</button>
+        <button class="signup-btn" onclick="signup()">회원가입</button>
+      </div>
+      <a href="#" class="login-link" onclick="adminlogin()">관리자로 로그인하기</a>
     </div>
   </body>
+  <script src="./login.js"></script>
 </html>
