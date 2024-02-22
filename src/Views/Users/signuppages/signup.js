@@ -24,9 +24,9 @@ btn.addEventListener("click", () => {
           fullAddr += (extraAddr !== '' ? '(' + extraAddr +')' : '');
         }
 
-        document.form1.addr1.value = fullAddr;
-        document.form1.zipcode.value = data.zonecode;
-        document.form1.addr2.focus();
+        document.address.postalCode.value = data.zonecode;
+        document.address.street.value = fullAddr;
+        document.address.detailedAddress.focus();
       }
   }).open();
 });
