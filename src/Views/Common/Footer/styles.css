@@ -10,8 +10,6 @@
 }
 
 .container {
-    max-width: 1216px;
-    min-width: 1216px;
     background-color: #2B3BD0;
     color: black;
     display: flex;
