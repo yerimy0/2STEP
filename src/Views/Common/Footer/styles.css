@@ -7,23 +7,28 @@
 .logo {
     width: 150px;
     height: auto;
+    margin-bottom: 10px;
 }
 
-.container {
+.footer {
+    max-width: 1880px;
+    min-width: 1216px;
     background-color: #2B3BD0;
-    color: black;
+    color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
     bottom: 0px;
-	position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+	position: fixed;
+    left: 0;
+    height: 10rem;
+    width: 100%;
 }
 
 .company {
-    text-align: center;
+    text-align: left;
+    font-size: small;
 }
 
 .customer service {
