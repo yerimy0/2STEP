@@ -1,4 +1,5 @@
-function signup() {
+function signup(e) {
+    e.preventDefault();
     // 이메일 유효성 검사
     var email = document.getElementById("email").value;
     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
