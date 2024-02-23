@@ -26,6 +26,11 @@ button {
     border-radius: 8px;
 }
 
+input:focus {
+    outline: none;
+    border: 1px solid #6242ff;
+}
+
 .login-btn {
     background-color: #2B3BD0;
     color: #fff;
