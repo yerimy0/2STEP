@@ -19,10 +19,11 @@ input[type="email"],
 input[type="password"],
 button {
     width: 100%;
-    margin-bottom: 10px;
     padding: 10px;
+    margin: 4px 0;
     border: 1px solid #D9D9D9;
     box-sizing: border-box;
+    border-radius: 8px;
 }
 
 .login-btn {
@@ -44,11 +45,7 @@ button {
     margin-top: 10px;
 }
 
-.btn-container button {
-    width: 100%;
-}
-
-.login-link {
+.adminlogin-link {
     margin-top: 5px;
     text-decoration: none;
     color: black;
