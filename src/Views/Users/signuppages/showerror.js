@@ -42,6 +42,6 @@ function showError(message) {
 }
 
 function hideError() {
-    var errorMessages = document.getElementById("error-messages");
+    let errorMessages = document.getElementById("error-messages");
     errorMessages.style.display = "none"; // 화면에서 숨기기
 }
