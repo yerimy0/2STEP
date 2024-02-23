@@ -1,9 +1,11 @@
+//이메일 유효성 검사 함수
 function isValidEmail(email) {
     // 이메일 정규식 패턴
     var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailPattern.test(email);
 }
 
+//로그인 함수
 function login() {
     var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
@@ -26,12 +28,13 @@ function login() {
     }
 }
 
+//회원가입 함수
 function signup() {
-    //회원가입 페이지로 이동하는 로직 추가할 수 있습니다.
-    alert('회원가입 페이지로 이동합니다.');
+    // 회원가입 페이지로 이동
+    window.location.href = 'signup_page.html'; // 회원가입 페이지 URL로 변경
 }
 
+//관리자 로그인 함수
 function adminlogin() {
-    //관리자 로그인 페이지로 이동하는 로직 추가할 수 있습니다.
-    alert('관리 페이지로 이동합니다.');
-}
+    // 관리자 로그인 페이지로 이동
+    window.location.href = 'admin_login.html'; // 관리자 로그인 페이지 URL로 변경}
