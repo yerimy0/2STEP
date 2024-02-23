@@ -1,6 +1,6 @@
 import { PRODUCT_DATA } from "../../../mainpages/data/data.js";
 
-productListShow("ACTIVE");
+productListShow("MEN");
 
 function productListShow(category) {
   productCategory(category);
@@ -27,7 +27,7 @@ function productDivide(category) {
       );
 
       li.innerHTML = `
-          <img src="${product.image}" alt="신발 예시" />
+      <a href='details.html'><img src="${product.image}" alt="신발 예시" /></a>
           <div class="product-information">
             <p class='product-name'>${product.name}</p>
             <p class='product-category'>${product.category}</p>
