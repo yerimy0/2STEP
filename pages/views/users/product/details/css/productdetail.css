@@ -1,6 +1,7 @@
 .product-container {
   display: flex;
   justify-content: center;
+  margin-top: 70px;
 }
 .product-container .product-show {
   width: 1216px;
