@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.footer {
+    max-width: 1880px;
+    min-width: 1216px;
+    background-color: #2B3BD0;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    bottom: 0px;
+	position: fixed;
+    left: 0;
+    height: 10rem;
+    width: 100%;
+}
+
+.company {
+    text-align: left;
+    font-size: small;
+}
+
+.customer service {
+    text-align: right;
+}
