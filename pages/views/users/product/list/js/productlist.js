@@ -27,7 +27,9 @@ function productDivide(category) {
       );
 
       li.innerHTML = `
-      <a href='details.html'><img src="${product.image}" alt="신발 예시" /></a>
+      <a href='../details/details.html?productId=${product.id}'><img src="${
+        product.image
+      }" alt="신발 예시" /></a>
           <div class="product-information">
             <p class='product-name'>${product.name}</p>
             <p class='product-category'>${product.category}</p>
