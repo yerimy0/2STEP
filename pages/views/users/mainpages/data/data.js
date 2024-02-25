@@ -1,5 +1,6 @@
 export const PRODUCT_DATA = [
   {
+    id: 1,
     image:
       "https://qi-o.qoo10cdn.com/goods_image_big/9/8/2/4/11602479824_l.jpg",
     name: "신발 이름1",
@@ -8,6 +9,7 @@ export const PRODUCT_DATA = [
     discount: 28,
   },
   {
+    id: 2,
     image:
       "https://qi-o.qoo10cdn.com/goods_image_big/9/8/2/4/11602479824_l.jpg",
     name: "신발 이름2",
@@ -16,6 +18,7 @@ export const PRODUCT_DATA = [
     discount: 30,
   },
   {
+    id: 3,
     image:
       "https://qi-o.qoo10cdn.com/goods_image_big/9/8/2/4/11602479824_l.jpg",
     name: "신발 이름3",
@@ -24,6 +27,7 @@ export const PRODUCT_DATA = [
     discount: 10,
   },
   {
+    id: 4,
     image:
       "https://qi-o.qoo10cdn.com/goods_image_big/9/8/2/4/11602479824_l.jpg",
     name: "신발 이름4",
@@ -32,6 +36,7 @@ export const PRODUCT_DATA = [
     discount: 50,
   },
   {
+    id: 5,
     image:
       "https://qi-o.qoo10cdn.com/goods_image_big/9/8/2/4/11602479824_l.jpg",
     name: "신발 이름5",
@@ -40,6 +45,7 @@ export const PRODUCT_DATA = [
     discount: 100,
   },
   {
+    id: 6,
     image:
       "https://qi-o.qoo10cdn.com/goods_image_big/9/8/2/4/11602479824_l.jpg",
     name: "신발 이름6",
@@ -48,6 +54,7 @@ export const PRODUCT_DATA = [
     discount: 1,
   },
   {
+    id: 7,
     image:
       "https://qi-o.qoo10cdn.com/goods_image_big/9/8/2/4/11602479824_l.jpg",
     name: "신발 이름7",
@@ -56,6 +63,7 @@ export const PRODUCT_DATA = [
     discount: 90,
   },
   {
+    id: 8,
     image:
       "https://qi-o.qoo10cdn.com/goods_image_big/9/8/2/4/11602479824_l.jpg",
     name: "신발 이름8",
@@ -64,6 +72,7 @@ export const PRODUCT_DATA = [
     discount: 70,
   },
   {
+    id: 9,
     image:
       "https://qi-o.qoo10cdn.com/goods_image_big/9/8/2/4/11602479824_l.jpg",
     name: "신발 이름9",
@@ -72,6 +81,7 @@ export const PRODUCT_DATA = [
     discount: 100,
   },
   {
+    id: 10,
     image:
       "https://qi-o.qoo10cdn.com/goods_image_big/9/8/2/4/11602479824_l.jpg",
     name: "신발 이름10",
@@ -80,6 +90,7 @@ export const PRODUCT_DATA = [
     discount: 100,
   },
   {
+    id: 11,
     image:
       "https://qi-o.qoo10cdn.com/goods_image_big/9/8/2/4/11602479824_l.jpg",
     name: "신발 이름11",
@@ -88,6 +99,7 @@ export const PRODUCT_DATA = [
     discount: 100,
   },
   {
+    id: 12,
     image:
       "https://qi-o.qoo10cdn.com/goods_image_big/9/8/2/4/11602479824_l.jpg",
     name: "신발 이름12",
