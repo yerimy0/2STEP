@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <div class="cart">
+        <h1>장바구니</h1>
+        <div class="container">
+            <div class="fullcheckbox">
+                <input type="checkbox" id="select-all-btn">
+                <label for="select-all-btn">전체 선택</label>
+            </div>
+            <hr>
+            <div>
+                <ul id="cart-list">
+                    <li id="list1">
+                        <input type="checkbox" class="item-checkbox">상품 이미지1<span class="product-name">상품명</span>
+                        <div class="quantity-container">
+                            <button class="quantity-control decrease-quantity">-</button>
+                            <span class="quantity">1</span>
+                            <button class="quantity-control increase-quantity">+</button>
+                        </div>>
+                        <button class="delete-btn">삭제</button>
+                    </li>
+                    <li id="list2">
+                        <input type="checkbox" class="item-checkbox">상품 이미지2<span class="product-name">상품명</span>
+                        <div class="quantity-container">
+                            <button class="quantity-control decrease-quantity">-</button>
+                            <span class="quantity">1</span>
+                            <button class="quantity-control increase-quantity">+</button>
+                        </div>
+                        <button class="delete-btn">삭제</button>
+                    </li>
+                </ul>
+                <hr>
+                <button id="delete-selected-btn">선택 삭제</button>
+                <hr>
+                <div id="total-price">
+                    총 금액: <span id="total-amount">0</span>원
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="tset.js"></script>
+    <script src="quantity.js"></script>
+    <script src="delete.js"></script>
+    <script src="price.js"></script>
+</body>
+</html>
