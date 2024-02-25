@@ -8,7 +8,7 @@ function loadProductDetailPage() {
     "productId"
   );
 
-  const selectedProduct = PRODUCT_DATA.find(
+  const selectedProduct = PRODUCT_DATA.data.find(
     (product) => product.id === Number(productId)
   );
 
@@ -22,19 +22,17 @@ function productShow(product) {
   div.classList.add("product-show");
 
   const discountPrice = Math.floor(
-    product.currentPrice * (1 - product.discount / 100)
+    product.price * (1 - product.discountRate / 100)
   );
 
   div.innerHTML = `
-      <img src="${product.image}" alt="신발 예시" />
+      <img src="${product.imageUrl}" alt="신발 예시" />
       <div class="product-information">
         <p class='product-name'>${product.name}</p>
         <p class='product-category'>${product.category}</p>
-        <p class='product-price'>${
-          product.currentPrice.toLocaleString() + " won"
-        }</p>
+        <p class='product-price'>${product.price.toLocaleString() + " won"}</p>
         <div>
-          <span class='product-discount'>${product.discount + "%"}</span>
+          <span class='product-discount'>${product.discountRate + "%"}</span>
           <span class='product-discountPrice'>${
             discountPrice.toLocaleString() + " won"
           }</span>

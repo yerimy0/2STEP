@@ -1,9 +1,9 @@
 import { PRODUCT_DATA, TILTE_TEXT } from "../data/data.js";
 
 let sectionID = 1;
-for (let i = 0; i < PRODUCT_DATA.length; i += 4) {
+for (let i = 0; i < PRODUCT_DATA.data.length; i += 4) {
   const titleTextData = TILTE_TEXT[sectionID - 1];
-  const productData = PRODUCT_DATA.slice(i, i + 4);
+  const productData = PRODUCT_DATA.data.slice(i, i + 4);
 
   CreateList(productData, sectionID);
   CreateTitle(titleTextData, sectionID);
@@ -20,22 +20,20 @@ function CreateList(products, id) {
     const li = document.createElement("li");
 
     const discountPrice = Math.floor(
-      product.currentPrice * (1 - product.discount / 100)
+      product.price * (1 - product.discountRate / 100)
     );
 
     li.innerHTML = `
       <div class="put-product">
-        <img src="${product.image}" alt="신발 예시" />
+        <img src="${product.imageUrl}" alt="신발 예시" />
         <button class="button">담기</button>
       </div>
       <div class="put-product-information">
         <p class='product-name'>${product.name}</p>
         <p class='product-category'>${product.category}</p>
-        <p class='product-price'>${
-          product.currentPrice.toLocaleString() + " won"
-        }</p>
+        <p class='product-price'>${product.price.toLocaleString() + " won"}</p>
         <div>
-          <span class='product-discount'>${product.discount + "%"}</span>
+          <span class='product-discount'>${product.discountRate + "%"}</span>
           <span class='product-discountPrice'>${
             discountPrice.toLocaleString() + " won"
           }</span>

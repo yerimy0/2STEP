@@ -18,26 +18,28 @@ function productCategory(category) {
 function productDivide(category) {
   const productList = document.querySelector(".product ul");
 
-  PRODUCT_DATA.forEach((product) => {
+  PRODUCT_DATA.data.forEach((product) => {
     const li = document.createElement("li");
 
     if (product.category === category) {
       const discountPrice = Math.floor(
-        product.currentPrice * (1 - product.discount / 100)
+        product.price * (1 - product.discountRate / 100)
       );
 
       li.innerHTML = `
       <a href='../details/details.html?productId=${product.id}'><img src="${
-        product.image
+        product.imageUrl
       }" alt="신발 예시" /></a>
           <div class="product-information">
             <p class='product-name'>${product.name}</p>
             <p class='product-category'>${product.category}</p>
             <p class='product-price'>${
-              product.currentPrice.toLocaleString() + " won"
+              product.price.toLocaleString() + " won"
             }</p>
             <div>
-              <span class='product-discount'>${product.discount + "%"}</span>
+              <span class='product-discount'>${
+                product.discountRate + "%"
+              }</span>
               <span class='product-discountPrice'>${
                 discountPrice.toLocaleString() + " won"
               }</span>
