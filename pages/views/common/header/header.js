@@ -7,7 +7,7 @@ function createHeader() {
   document.head.appendChild(link);
 
   const container = document.createElement("div");
-  container.className = "container";
+  container.className = "container-box";
   header.appendChild(container);
 
   const logo = document.createElement("div");
@@ -22,7 +22,7 @@ function createHeader() {
   container.appendChild(logo);
 
   const bottom = document.createElement("div");
-  bottom.className = "bottom";
+  bottom.className = "list-container";
   container.appendChild(bottom);
 
   const nav = document.createElement("nav");
