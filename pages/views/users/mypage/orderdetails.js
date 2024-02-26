@@ -1,3 +1,9 @@
+// 마이페이지 첫 화면을 주문 내역으로 고정
+document.addEventListener("DOMContentLoaded", function() {
+  showOrderHistory(); 
+});
+
+
 function showOrderHistory() {
     document.getElementById("content").innerHTML = `
       <div class="page-title">주문내역</div>
