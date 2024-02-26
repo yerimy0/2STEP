@@ -49,8 +49,8 @@ function showProfileUpdateForm() {
         <label for="address">주소 :</label>
         <div class="zipcode-container">
           <input type="text" class="postalCode" maxlength="5" placeholder="우편번호" readonly>
-          <button type="button">우편번호찾기</button>
-        </div>
+          <button type="button" onclick="showPostcodeSearch()">우편번호찾기</button>
+          </div>
         <input type="text" class="street" placeholder="주소" readonly>
         <input type="text" class="detailedAddress" placeholder="상세주소">
       </div>
