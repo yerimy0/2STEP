@@ -8,17 +8,20 @@
 </head>
 <body>
 
-<div class="container">
-  <div class="sidebar">
-    <div class="title">MYPAGE</div>
-    <div class="navigation">
-      <div class="nav-item" onclick="showOrderHistory()">주문내역</div>
-      <div class="nav-item" onclick="showProfileUpdate()">개인정보수정</div>
+  <div class="container">
+    <div class="sidebar">
+      <!-- 사이드바 -->
+      <div class="title">MYPAGE</div>
+      <div class="navigation">
+        <!-- 네비게이션 -->
+        <div class="nav-item" onclick="showOrderHistory()">주문내역</div>
+        <div class="nav-item" onclick="showEmailPasswordForm()">개인정보수정</div>
+      </div>
+    </div>
+    <div class="main-content" id="content">
+      <!-- 메인 콘텐츠 영역 -->
     </div>
   </div>
-  <div class="main-content" id="content">
-  </div>
-</div>
 
 <script type="module"></script> 
 <script src="./orderdetails.js"></script>

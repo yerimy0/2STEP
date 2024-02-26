@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
   showOrderHistory(); 
 });
 
-
+// 주문 내역 표시 함수
 function showOrderHistory() {
     document.getElementById("content").innerHTML = `
       <div class="page-title">주문내역</div>

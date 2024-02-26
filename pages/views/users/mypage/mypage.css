@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-
 body {
     font-family: 'Inter', sans-serif;
     margin: 20px;
@@ -64,26 +62,24 @@ body {
     margin-bottom: 20px;
 }
 
-.order-item {
+.profile-form {
     margin-bottom: 20px;
 }
 
-.order-item img {
-    width: 100px;
-    margin-right: 20px;
+.profile-form label {
+    display: block;
+    margin-bottom: 5px;
 }
 
-.order-item-details {
-    display: inline-block;
-    vertical-align: top;
+.profile-form input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
 }
 
-.order-item-details h3 {
-    margin: 0;
-}
-
-.order-item-details p {
-    margin: 5px 0;
+.button-container {
+    display: flex;
+    justify-content: space-between;
 }
 
 .button {
@@ -95,16 +91,9 @@ body {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin-top: 10px;
     cursor: pointer;
 }
 
 .button:hover {
     background-color: #2b3bd0;
-}
-
-.profile-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
