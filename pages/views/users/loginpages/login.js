@@ -1,5 +1,5 @@
 // 로그인 처리 함수
-function handleLogin() {
+async function handleLogin() {
     const email = document.querySelector('.email').value; // 이메일 입력값 가져오기
     const password = document.querySelector('.password').value; // 비밀번호 입력값 가져오기
     
@@ -14,12 +14,29 @@ function handleLogin() {
         alert('유효하지 않은 이메일 형식입니다');
         return;
     }
+    
+    // API 수정 필요
+    try {
+        const response = await fetch('/api/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify({email, password})
+        });
 
-    // 예시로 고정된 계정 정보를 사용하여 로그인
-    if (email === 'example@example.com' && password === 'password') {
-        window.location.href = 'success_page.html'; // 메인 페이지로 url 변경
-    } else {
-        alert('이메일 또는 비밀번호를 확인해 주세요');
+        if (response.ok) {
+            const data = await response.json();
+            const token = data.token; // 서버에서 받은 토큰
+            localStorage.setItem('token', token); // 토큰을 로컬 스토리지에 저장
+            window.location.href = 'success_page.html'; // 로그인 성공 시 페이지 이동
+        } else {
+            const errorMessage = await response.text();
+            alert(`로그인 실패: ${errorMessage}`);
+        } 
+    } catch(error) {
+        console.error('로그인 요청 실패:', error);
+        alert('로그인 요청에 실패했습니다. 다시 시도해주세요');
     }
 }
 
