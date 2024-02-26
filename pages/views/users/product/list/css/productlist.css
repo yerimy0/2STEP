@@ -1,13 +1,15 @@
 .productList {
+  margin-top: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 180px;
+  margin-bottom: 50px;
 }
 
 .productList .category .title-class {
   font-size: 32px;
   font-weight: bold;
+  margin-bottom: 50px;
 }
 .productList .product {
   width: 1216px;
@@ -21,7 +23,7 @@
   padding: 0;
   align-items: center;
   width: 1216px;
-  height: 632px;
+  height: auto;
 }
 
 .productList .product li {
@@ -59,7 +61,7 @@
   font-weight: bold;
 }
 
-.product .psroduct-information .product-discountPrice {
+.product .product-information .product-discountPrice {
   color: #000000;
   font-size: 20px;
   font-weight: bold;
