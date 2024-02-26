@@ -1,6 +1,8 @@
 import { PRODUCT_DATA } from "../../../mainpages/data/data.js";
 
-productListShow("MEN");
+const category = new URLSearchParams(window.location.search).get("category");
+
+productListShow(category);
 
 function productListShow(category) {
   productCategory(category);

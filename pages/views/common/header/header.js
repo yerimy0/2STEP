@@ -13,7 +13,7 @@ function createHeader() {
   const logo = document.createElement("div");
   logo.className = "logo";
   const a = document.createElement("a");
-  a.href = "#";
+  a.href = "http://localhost:8080/views/users/mainpages/mainpage.html";
   const img = document.createElement("img");
   img.src = "http://localhost:8080/views/common/header/2STEP.png";
   img.alt = "로고";
@@ -44,11 +44,11 @@ function createHeader() {
   ];
   menuItems.forEach((item) => {
     const li = document.createElement("li");
-    if (li === "|") {
+    if (item === "|") {
       li.textContent = item;
     } else {
       const a = document.createElement("a");
-      a.href = "#";
+      a.href = `http://localhost:8080/views/users/product/list/list.html?category=${item}`;
       a.textContent = item;
       li.appendChild(a);
     }
@@ -59,7 +59,7 @@ function createHeader() {
   userMenu.className = "user-menu";
   nav.appendChild(userMenu);
 
-  const userMenuItems = ["LOGIN/JOIN", "CART(0)", "MYPAGE"];
+  const userMenuItems = ["LOGIN", "JOIN", "CART", "MYPAGE"];
   userMenuItems.forEach((item) => {
     const li = document.createElement("li");
     const a = document.createElement("a");

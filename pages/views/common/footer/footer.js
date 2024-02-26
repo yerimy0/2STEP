@@ -16,7 +16,7 @@ function createFooter() {
   const logo = document.createElement("div");
   logo.className = "logo";
   const a = document.createElement("a");
-  a.href = "#";
+  a.href = "http://localhost:8080/views/users/mainpages/mainpage.html";
   const img = document.createElement("img");
   img.src = "http://localhost:8080/views/common/footer/2STEP.png";
   img.alt = "로고";
