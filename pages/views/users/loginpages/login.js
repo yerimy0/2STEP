@@ -14,8 +14,8 @@ document.querySelector(".adminlogin-link").addEventListener("click", function(ev
 });
 
 function login() {
-    let email = document.getElementById('email').value;
-    let password = document.getElementById('password').value;
+    let email = document.querySelector('.email').value;
+    let password = document.querySelector('.password').value;
 
     // 이메일 또는 비밀번호가 입력되지 않은 경우
     if (email === '' || password === '') {
