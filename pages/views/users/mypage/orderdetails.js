@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // 주문 내역 표시 함수
 function showOrderHistory() {
-    document.getElementById("content").innerHTML = `
+    document.querySelector(".main-content").innerHTML = `
       <div class="page-title">주문내역</div>
       <div class="separator"></div>
       <div class="order-item">
@@ -29,4 +29,4 @@ function showOrderHistory() {
         </div>
       </div>
     `;
-  }
+}
