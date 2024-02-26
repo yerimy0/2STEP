@@ -9,6 +9,7 @@
 .productList .category .title-class {
   font-size: 32px;
   font-weight: bold;
+  margin-bottom: 50px;
 }
 .productList .product {
   width: 1216px;

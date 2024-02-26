@@ -5,6 +5,8 @@
 .product-options form {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  height: 80px;
 }
 
 .product-options form .select.is-small {
@@ -14,6 +16,7 @@
 .product-options form .select.is-small select {
   font-weight: 500;
   width: 100%;
+  font-size: 15px;
 }
 
 .botton-container {
@@ -24,11 +27,11 @@
 
 .cart-button,
 .purchase-button {
-  padding: 10px 20px;
+  padding: 12px 20px;
   border: none;
   cursor: pointer;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 17px;
   width: 50%;
 }
 

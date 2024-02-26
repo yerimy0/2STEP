@@ -5,6 +5,7 @@
 }
 .product-container .product-show {
   width: 1216px;
+  min-width: 1216px;
   height: 702px;
   display: flex;
   justify-content: space-between;
