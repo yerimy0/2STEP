@@ -1,66 +1,54 @@
 * {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    text-decoration: none;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  text-decoration: none;
 }
 
 header {
-    background-color: white;
-    color: black;
-    max-width: 1216px;
-    min-width: 1216px;
-    height: 100px;
-    margin:auto;
+  background-color: white;
+  color: black;
+  width: 1216px;
+  margin: auto;
 }
 
-.container {
-    max-width: 1216px;
-    min-width: 1216px;
-    position: relative;
-    height: 65px;
+header .container-box {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
 }
 
-.logo {
-    float: left;
-    width: 100%;
-    margin-top: 20px;
-    margin-bottom: 10px;
+header .logo {
+  float: left;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 25px;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
+header .logo img {
+  width: 250px;
 }
 
-nav ul li {
-    float: left;
-    margin-right: 20px;
+header nav ul {
+  list-style: none;
+  padding: 0;
 }
 
-.bottom {
-    display: flex;
-    max-width: 1216px;
-    min-width: 1216px;
-    justify-content: space-between;
-    margin: auto;
-    position: relative;
+header nav ul li {
+  float: left;
+  margin-right: 20px;
+  font-size: 23px;
+  font-weight: bold;
 }
 
-.menu {
-    float: left;
-    margin-top: 10px;
+header .list-container nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 
-.user-menu {
-    float: right;
-    margin-top: 10px;
-    position: absolute;
-    right: 0;
-}
-
-.menu a,
-.user-menu a {
-    color: black;
-    font-weight: bold;
+header .menu a,
+header .user-menu a {
+  color: black;
+  font-weight: bold;
 }
