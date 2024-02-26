@@ -25,8 +25,12 @@ function CreateList(products, id) {
 
     li.innerHTML = `
       <div class="put-product">
-        <img src="${product.imageUrl}" alt="신발 예시" />
-        <button class="button">담기</button>
+        <a href="http://localhost:8080/views/users/product/details/details.html?productId=${Number(
+          product.id
+        )}">
+          <img src="${product.imageUrl}" alt="신발 예시" />
+          <button class="button">담기</button>
+        </a>
       </div>
       <div class="put-product-information">
         <p class='product-name'>${product.name}</p>
