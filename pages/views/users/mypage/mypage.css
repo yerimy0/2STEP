@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
 body {
     font-family: 'Inter', sans-serif;
-    margin: 20px;
+    margin: 0;
     padding: 0;
 }
 
@@ -77,12 +79,12 @@ body {
     padding: 5px;
 }
 
-.button-container {
+.order-button-container {
     display: flex;
     justify-content: space-between;
 }
 
-.button {
+.order-button {
     background-color: #2b3bd0;
     border: none;
     color: white;
@@ -94,6 +96,62 @@ body {
     cursor: pointer;
 }
 
-.button:hover {
+.order-button:hover {
     background-color: #2b3bd0;
+}
+
+.check-button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.check-button {
+    background-color: #2b3bd0;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.check-button:hover {
+    background-color: #2b3bd0;
+}
+
+.zipcode-container {
+    display: flex;
+    align-items: center;
+}
+
+.zipcode-container > button {
+    background-color: white;
+    font-weight: 700;
+    cursor: pointer;
+    margin-left: 4px;
+    padding: 8px 22px;
+    flex-basis: 30%;
+}
+
+.zipcode-container > button:hover {
+    border: 1px solid #6242ff;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+button {
+    width: 100%;
+    padding: 10px;
+    margin: 4px 0;
+    border: 1px solid #D9D9D9;
+    box-sizing: border-box; 
+    border-radius : 8px;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid #6242ff;
 }
