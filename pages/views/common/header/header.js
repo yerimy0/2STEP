@@ -59,15 +59,40 @@ function createHeader() {
   userMenu.className = "user-menu";
   nav.appendChild(userMenu);
 
-  const userMenuItems = ["LOGIN", "JOIN", "CART", "MYPAGE"];
+  let userMenuItems = ["LOGIN", "JOIN", "CART", "MYPAGE"];
+
+  let loginSuccess = new URLSearchParams(window.location.search).get("login");
+
+  if (loginSuccess === "true") {
+    userMenuItems = ["LOGOUT", "CART", "MYPAGE"];
+  }
+
   userMenuItems.forEach((item) => {
     const li = document.createElement("li");
     const a = document.createElement("a");
-    a.href = "#";
+    a.href = userMenuCreate(item, loginSuccess);
     a.textContent = item;
     li.appendChild(a);
     userMenu.appendChild(li);
   });
+}
+
+function userMenuCreate(item, loginSuccess) {
+  if (item === "LOGIN") {
+    return `http://localhost:8080/views/users/loginpages/login.html?login=false`;
+  }
+  if (item === "LOGOUT") {
+    return `http://localhost:8080/views/users/mainpages/mainpage.html?login=false`;
+  }
+  if (item === "JOIN") {
+    return `http://localhost:8080/views/users/signuppages/signup.html?login=false`;
+  }
+  if (item === "CART") {
+    return `http://localhost:8080/views/users/cart/cart.html?login=${loginSuccess}`;
+  }
+  if (item === "MYPAGE") {
+    return;
+  }
 }
 
 export default createHeader;
