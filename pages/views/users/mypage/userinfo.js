@@ -57,8 +57,8 @@ function showProfileUpdateForm() {
     </div>
     <div class="separator"></div>
     <div class="button-container">
-      <button class="button">탈퇴하기</button>
-      <button class="button">회원정보수정</button>
+      <button class="signout-button">탈퇴하기</button>
+      <button class="edit-profile-button">회원정보수정</button>
     </div>
   `;
 }
