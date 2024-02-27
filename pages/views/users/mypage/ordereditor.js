@@ -39,23 +39,22 @@ document.addEventListener("DOMContentLoaded", function() {
         <div class="section-title">구매자 정보</div>
         <div class="separator"></div>
         <div class="buyer-info">
-            <p>주문자: 엘리스</p>
-            <p>연락처: 010-1111-1111</p>
-            <p>이메일: elice@gmail.com</p>
+            <p>주문자 : 엘리스</p>
+            <p>연락처 : 010-1111-1111</p>
+            <p>이메일 : elice@gmail.com</p>
         </div>
         
         <!-- 배송지 정보 부분 -->
         <div class="section-title">배송지 정보</div>
         <div class="separator"></div>
         <div class="shipping-info">
-            <p>수령인: 엘리스</p>
-            <p>연락처: 010-1243-1234</p>
-            <p>배송지: 서울시 성동구 성수낙낙</p>
+            <p>수령인 : 엘리스</p>
+            <p>연락처 : 010-1243-1234</p>
+            <p>배송지 : 서울시 성동구 성수낙낙</p>
         </div>
         
-
         <!-- 수정 요청 버튼 -->
-        <button type="submit" class="order-button">수정 요청</button>
+        <button type="submit" class="edit-button">수정 요청</button>
     </form>
     `;
  }

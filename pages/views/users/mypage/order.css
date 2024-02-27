@@ -36,6 +36,8 @@
   display: flex;
   flex-direction: column; 
   align-items: flex-end;
+  margin-left: auto;
+  padding-right: 50px;
 }
 
 .button-group button {
@@ -43,7 +45,7 @@
   padding: 5px 8px;
   width: px;
   height: 40px;
-  font-size: 0.8em;
+  font-size: 1em;
 }
 
 .button-group button:last-child {
@@ -53,4 +55,31 @@
 .delivery-status {
     color: #2b3bd0;
     font-weight: bold;
+}
+
+/*주문 정보 수정*/
+.section-title {
+  margin-bottom: 10px;
+  padding-top: 50px;
+  font-weight: bold;
+}
+
+
+
+.edit-button {
+  position: absolute;
+  left: 60%;
+  transform: translateX(-50%);
+  background-color: #2b3bd0;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.edit-button:hover {
+  background-color: #2b3bd0;
 }
