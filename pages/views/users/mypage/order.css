@@ -57,14 +57,14 @@
     font-weight: bold;
 }
 
+
 /*주문 정보 수정*/
 .section-title {
   margin-bottom: 10px;
   padding-top: 50px;
   font-weight: bold;
+  font-size: 1em;
 }
-
-
 
 .edit-button {
   position: absolute;
@@ -82,4 +82,48 @@
 
 .edit-button:hover {
   background-color: #2b3bd0;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+}
+
+.image-group img {
+  max-width: 100px;
+  height: auto;
+}
+
+.details-group {
+  flex: 1; 
+  margin-left: 20px; 
+}
+
+.details-group h3 {
+  margin: 0;
+}
+
+.order-button-group {
+  display: flex;
+  align-items: center;
+}
+
+.order-button-group button {
+  margin-left: 10px; 
+  padding: 5px 8px;
+  font-size: 1em;
+}
+
+.delete-button {
+  background-color: black;
+  color: white;
+  border: none;
+}
+
+.delete-button:hover {
+  background-color: black;
 }
