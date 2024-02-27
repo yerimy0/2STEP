@@ -1,4 +1,5 @@
 function remove(cart) {
+  //선택 삭제
   document.querySelectorAll(".list-remove").forEach((btn) => {
     btn.addEventListener("click", function (e) {
       const removeId = e.target.dataset.id;
@@ -8,8 +9,12 @@ function remove(cart) {
       });
 
       localStorage.setItem("cart", JSON.stringify(newCart));
-      window.location.reload();
     });
+  });
+
+  //전체 삭제
+  document.querySelector(".list-remove-all").addEventListener("click", () => {
+    localStorage.setItem("cart", JSON.stringify([]));
   });
 }
 export default remove;
