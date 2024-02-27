@@ -4,6 +4,10 @@
   font-size: 40px;
   margin: 70px 0;
 }
+main {
+  margin-bottom: 200px;
+}
+
 form {
   display: flex;
   flex-direction: column;

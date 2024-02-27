@@ -9,30 +9,38 @@
     <link rel="stylesheet" href="./css/payment.css" />
   </head>
   <body>
-    <h1 class="title">장바구니</h1>
-    <form>
-      <div class="list-container">
-        <!-- <div class="check-all-box">
+    <header id="header"></header>
+
+    <main>
+      <h1 class="title">장바구니</h1>
+      <form>
+        <div class="list-container">
+          <!-- <div class="check-all-box">
           <input type="checkbox" id="check-all" /> 전체 선택
         </div> -->
-        <div class="product-container"></div>
-        <button class="list-remove-all">전체 삭제</button>
-      </div>
+          <div class="product-container"></div>
+          <button class="list-remove-all">전체 삭제</button>
+        </div>
 
-      <div class="payment-container">
-        <div class="payment">
-          <div class="total-price">
-            <span class="payment-text">주문 금액</span>
-          </div>
-          <div class="total-discount">
-            <span class="payment-text">총 할인 금액</span>
-          </div>
-          <div class="total-payment">
-            <span class="payment-text">결제 금액</span>
+        <div class="payment-container">
+          <div class="payment">
+            <div class="total-price">
+              <span class="payment-text">주문 금액</span>
+            </div>
+            <div class="total-discount">
+              <span class="payment-text">총 할인 금액</span>
+            </div>
+            <div class="total-payment">
+              <span class="payment-text">결제 금액</span>
+            </div>
           </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </main>
+
+    <footer id="footer"></footer>
   </body>
   <script type="module" src="./js/cart.js"></script>
+  <!-- 헤더, 풋터-->
+  <script type="module" src="./js/common.js"></script>
 </html>

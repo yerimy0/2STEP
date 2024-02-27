@@ -1,5 +1,5 @@
 function noDataText() {
-  const container = document.querySelector("body");
+  const container = document.querySelector("main");
   const img = document.createElement("img");
   img.className = "noData";
   img.src = "텅.png";
