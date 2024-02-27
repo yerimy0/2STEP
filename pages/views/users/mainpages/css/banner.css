@@ -1,11 +1,7 @@
-main {
-  margin-top: 100px;
-}
-
 main .topBanner {
   display: flex;
   justify-content: center;
-  margin: 40px 0 180px 0;
+  margin-bottom: 180px;
 }
 main .topBanner .slider {
   width: 1216px;
