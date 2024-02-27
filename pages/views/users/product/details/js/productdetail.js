@@ -26,7 +26,10 @@ function productShow(product) {
   );
 
   div.innerHTML = `
-      <img src="${product.imageUrl}" alt="신발 예시" />
+      <div class = image-container>
+        <img src="${product.imageUrl}" alt="신발 예시" />
+        <div class='pages'><span>1 / 8</span></div>
+      </div>
       <div class="product-information">
         <p class='product-name'>${product.name}</p>
         <p class='product-category'>${product.category}</p>
@@ -37,6 +40,32 @@ function productShow(product) {
             discountPrice.toLocaleString() + " won"
           }</span>
         </div>
+        <p class='product-company'>제조사: ${product.company}</p>
+        
+        <div class="product-options">
+          <form>
+            <div class="select is-small">
+              <select>
+                <option selected disabled>Color</option>
+                <option>Select dropdown</option>
+                <option>With options</option>
+              </select>
+            </div>
+
+           <div class="select is-small">
+              <select>
+                <option selected disabled>Size</option>
+                <option>Select dropdown</option>
+                <option>With options</option>
+              </select>
+            </div>
+          </form>
+          <div class="botton-container">
+            <button class="cart-button">장바구니</button>
+            <button class="purchase-button">구매하기</button>
+          </div>  
+        </div>
+
       </div>
     `;
 
