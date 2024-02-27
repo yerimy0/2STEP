@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/*주문내역*/
+.order-button {
+    background-color: #2b3bd0;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.order-button:hover {
+    background-color: #2b3bd0;
+}
+
+.order-item {
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start;
+}
+
+.image-group {
+    margin: 10px 10px;
+}
+
+.details-group {
+     margin-right: 300px;
+     padding-left: 100px;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-end;
+}
+
+.button-group button {
+  margin-bottom: 10px;
+  padding: 5px 8px;
+  width: px;
+  height: 40px;
+  font-size: 0.8em;
+}
+
+.button-group button:last-child {
+  margin-bottom: 0;
+}
+
+.delivery-status {
+    color: #2b3bd0;
+    font-weight: bold;
+}
