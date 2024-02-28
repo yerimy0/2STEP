@@ -1,5 +1,5 @@
-//우편번호검색 기능
-document.querySelector("button[type='button']").addEventListener("click", () => {
+// 우편번호 검색 기능
+document.querySelector("button.zipcode-search").addEventListener("click", () => {
     new daum.Postcode({
         oncomplete: function(data) {
             console.log(data);
@@ -23,9 +23,9 @@ document.querySelector("button[type='button']").addEventListener("click", () => 
                 fullAddr += (extraAddr !== '' ? '(' + extraAddr + ')' : '');
             }
   
-            document.querySelector("input[name='postalCode']").value = data.zonecode;
-            document.querySelector("input[name='street']").value = fullAddr;
-            document.querySelector("input[name='detailedAddress']").focus();
+            document.querySelector("input[name='shipping-zipcode']").value = data.zonecode;
+            document.querySelector("input[name='shipping-address']").value = fullAddr;
+            document.querySelector("input[name='shipping-address']").focus();
         }
     }).open();
-  });
+});
