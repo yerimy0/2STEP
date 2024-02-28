@@ -45,6 +45,20 @@ console.log(response);
     if (response.ok) {
         console.log(response);
 
+// .then(response => {
+//     console.log(response);
+//     if (!response.ok) {
+//         throw new Error("네트워크 응답이 실패했습니다.");
+//     }
+//     return response.json(); // 응답을 JSON으로 파싱
+// })
+// .then(data => {
+//     // 성공적으로 회원가입이 처리된 경우
+//     alert(data.message); // 서버에서 받은 메시지를 보여줌
+//     // 오류 메시지 숨기기
+//     hideError();
+// })
+//        
 } else {throw new Error("네트워크 응답이 실패했습니다.");
 }
 }catch(error) {
