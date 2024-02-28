@@ -12,16 +12,15 @@ async function handleLogin() {
     alert('유효하지 않은 이메일 형식입니다');
     return;
 }
-
  // API 수정 필요
   try {
       const data = { email, password };
-      const response = await fetch('http://kdt-sw-8-team02.elicecoding.com/api/v1/sign-in', {
+      const response = await fetch('http://kdt-sw-8-team02.elicecoding.com/api/v1/auth/sign-in', {
           method: 'POST',
           headers: {
               'Content-Type' : 'application/json'
           },
-          body: JSON.stringify({ data })
+          body: JSON.stringify({ ...data })
       });
 
       if (response.ok) {
