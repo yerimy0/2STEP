@@ -2,33 +2,26 @@
 async function handleLogin() {
   const email = document.querySelector('.email').value; // 이메일 입력값 가져오기
   const password = document.querySelector('.password').value; // 비밀번호 입력값 가져오기
-  const loginSuccess = new URLSearchParams(window.location.search).get("loginSuccess");
   
 // 이메일 또는 비밀번호가 입력되지 않은 경우 
   if (email === '' || password === '') {
-      alert('이메일 또는 비밀번호를 입력해 주세요');
+    alert('이메일 또는 비밀번호를 입력해 주세요');
+    return;
   }
-// 유효하지 않은 이메일 형식인 경우
-  else if (!isValidEmail(email)) {
-      alert('유효하지 않은 이메일 형식입니다');
-  } else {
-// 예시로 고정된 계정 정보를 사용하여 로그인
-    if (email === "example@example.com" && password === "password") {
-      loginSuccess = "true";
-      window.location.href = `http://localhost:8080/views/users/mainpages/mainpage.html?login=${loginSuccess}`; // 메인 페이지로 url 변경
-    } else {
-      alert("이메일 또는 비밀번호를 확인해 주세요");
-    }
-  }
-  
+  if (!isValidEmail(email)) {
+    alert('유효하지 않은 이메일 형식입니다');
+    return;
+}
+
  // API 수정 필요
   try {
-      const response = await fetch('/api/login', {
+      const data = { email, password };
+      const response = await fetch('http://kdt-sw-8-team02.elicecoding.com/api/v1/sign-in', {
           method: 'POST',
           headers: {
               'Content-Type' : 'application/json'
           },
-          body: JSON.stringify({email, password})
+          body: JSON.stringify({ data })
       });
 
       if (response.ok) {
