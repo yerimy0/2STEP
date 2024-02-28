@@ -23,7 +23,7 @@ function productDivide(category) {
   PRODUCT_DATA.data.forEach((product) => {
     const li = document.createElement("li");
 
-    if (product.category === category) {
+    if (product.category === category || product.state === category) {
       const discountPrice = Math.floor(
         product.price * (1 - product.discountRate / 100)
       );
