@@ -1,4 +1,4 @@
-import { PRODUCT_DATA } from "../../../mainpages/data/data.js";
+import PRODUCT_DATA from "../../../../common/data/productdata";
 
 const category = new URLSearchParams(window.location.search).get("category");
 
@@ -29,8 +29,8 @@ function productDivide(category) {
       );
 
       li.innerHTML = `
-      <a href='../details/details.html?productId=${product.id}'><img src="${
-        product.imageUrl
+      <a href='../details/details.html?productId=${product._id}'><img src="${
+        product.imgUrl
       }" alt="신발 예시" /></a>
           <div class="product-information">
             <p class='product-name'>${product.name}</p>

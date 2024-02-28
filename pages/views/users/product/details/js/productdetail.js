@@ -1,4 +1,5 @@
-import { PRODUCT_DATA } from "../../../mainpages/data/data.js";
+import PRODUCT_DATA from "../../../../common/data/productdata.js";
+
 import cartCreate from "./cartcreate.js";
 import createOption from "./createoption.js";
 
@@ -11,7 +12,7 @@ function loadProductDetailPage() {
   );
 
   const selectedProduct = PRODUCT_DATA.data.find(
-    (product) => product.id === Number(productId)
+    (product) => product._id === productId
   );
 
   productShow(selectedProduct);
@@ -29,7 +30,7 @@ function productShow(product) {
 
   div.innerHTML = `
       <div class = image-container>
-        <img src="${product.imageUrl}" alt="신발 예시" />
+        <img src="${product.imgUrl}" alt="신발 예시" />
         <div class='pages'><span>1 / 8</span></div>
       </div>
       <div class="product-information">

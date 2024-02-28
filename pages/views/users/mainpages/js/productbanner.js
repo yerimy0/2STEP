@@ -1,4 +1,5 @@
-import { PRODUCT_DATA, TILTE_TEXT } from "../data/data.js";
+import { TILTE_TEXT } from "../data/data.js";
+import PRODUCT_DATA from "../../../common/data/productdata.js";
 
 let sectionID = 1;
 for (let i = 0; i < PRODUCT_DATA.data.length; i += 4) {
@@ -25,10 +26,10 @@ function CreateList(products, id) {
 
     li.innerHTML = `
       <div class="put-product">
-        <a href="http://localhost:8080/views/users/product/details/details.html?productId=${Number(
-          product.id
-        )}">
-          <img src="${product.imageUrl}" alt="신발 예시" />
+        <a href="http://localhost:8080/views/users/product/details/details.html?productId=${
+          product._id
+        }">
+          <img src="${product.imgUrl}" alt="신발 예시" />
           <button class="button">담기</button>
         </a>
       </div>
