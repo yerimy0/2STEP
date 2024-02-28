@@ -1,4 +1,4 @@
-import { PRODUCT_DATA } from "../../../mainpages/data/data.js";
+import PRODUCT_DATA from "../../../../common/data/productdata";
 
 const category = new URLSearchParams(window.location.search).get("category");
 
@@ -23,14 +23,14 @@ function productDivide(category) {
   PRODUCT_DATA.data.forEach((product) => {
     const li = document.createElement("li");
 
-    if (product.category === category) {
+    if (product.category === category || product.state === category) {
       const discountPrice = Math.floor(
         product.price * (1 - product.discountRate / 100)
       );
 
       li.innerHTML = `
-      <a href='../details/details.html?productId=${product.id}'><img src="${
-        product.imageUrl
+      <a href='../details/details.html?productId=${product._id}'><img src="${
+        product.imgUrl
       }" alt="신발 예시" /></a>
           <div class="product-information">
             <p class='product-name'>${product.name}</p>

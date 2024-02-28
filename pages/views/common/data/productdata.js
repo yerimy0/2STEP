@@ -9,7 +9,7 @@ const findProducts = async () => {
     if (res.ok) {
       const data = await res.json();
       console.log(data);
-      return data.data;
+      return data;
     } else {
       console.error(res.status, res.statusText, res.statusCode);
     }
@@ -18,4 +18,6 @@ const findProducts = async () => {
   }
 };
 
-await findProducts();
+const PRODUCT_DATA = await findProducts();
+
+export default PRODUCT_DATA;
