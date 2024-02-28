@@ -12,6 +12,7 @@ export const PRODUCT_DATA = {
       company: "상품 제조사",
       size: [250, 240, 230],
       color: ["black", "blue", "white"],
+      state: "NEW",
     },
     {
       id: 2,
@@ -25,6 +26,7 @@ export const PRODUCT_DATA = {
       company: "상품 제조사",
       size: [250, 240, 230],
       color: ["black", "blue", "white"],
+      state: "NEW",
     },
     {
       id: 3,
@@ -38,6 +40,7 @@ export const PRODUCT_DATA = {
       company: "상품 제조사",
       size: [250, 240, 230],
       color: ["black", "blue", "white"],
+      state: "NEW",
     },
     {
       id: 4,
@@ -51,6 +54,7 @@ export const PRODUCT_DATA = {
       company: "상품 제조사",
       size: [250, 240, 230],
       color: ["black", "blue", "white"],
+      state: "NEW",
     },
     {
       id: 5,
@@ -64,6 +68,7 @@ export const PRODUCT_DATA = {
       company: "상품 제조사",
       size: [250, 240, 230],
       color: ["black", "blue", "white"],
+      state: "SALE",
     },
     {
       id: 6,
@@ -77,6 +82,7 @@ export const PRODUCT_DATA = {
       company: "상품 제조사",
       size: [250, 240, 230],
       color: ["black", "blue", "white"],
+      state: "SALE",
     },
     {
       id: 7,
@@ -90,6 +96,7 @@ export const PRODUCT_DATA = {
       company: "상품 제조사",
       size: [250, 240, 230],
       color: ["black", "blue", "white"],
+      state: "SALE",
     },
     {
       id: 8,
@@ -103,6 +110,7 @@ export const PRODUCT_DATA = {
       company: "상품 제조사",
       size: [250, 240, 230],
       color: ["black", "blue", "white"],
+      state: "SALE",
     },
     {
       id: 9,
@@ -116,6 +124,7 @@ export const PRODUCT_DATA = {
       company: "상품 제조사",
       size: [250, 240, 230],
       color: ["black", "blue", "white"],
+      state: "BEST",
     },
     {
       id: 10,
@@ -129,6 +138,7 @@ export const PRODUCT_DATA = {
       company: "상품 제조사",
       size: [250, 240, 230],
       color: ["black", "blue", "white"],
+      state: "BEST",
     },
     {
       id: 11,
@@ -142,6 +152,7 @@ export const PRODUCT_DATA = {
       company: "상품 제조사",
       size: [250, 240, 230],
       color: ["black", "blue", "white"],
+      state: "BEST",
     },
     {
       id: 12,
@@ -155,6 +166,7 @@ export const PRODUCT_DATA = {
       company: "상품 제조사",
       size: [250, 240, 230],
       color: ["black", "blue", "white"],
+      state: "BEST",
     },
   ],
   error: "string",
@@ -162,15 +174,18 @@ export const PRODUCT_DATA = {
 
 export const TILTE_TEXT = [
   {
+    title: "투스탭의 신상품 🌟",
+    subTitle: "신상 세일!!",
+    state: "NEW",
+  },
+  {
     title: "지금 가장 인기있는 상품👍",
-    subTitle: "투스탭 특가템 최대 50%",
+    subTitle: "투스탭 최대 인기 상품 할인!",
+    state: "BEST",
   },
   {
-    title: "2STEP의 최대 할인 상품",
+    title: "지금 최대 할인 상품 ⏲️",
     subTitle: "투스탭 특가템 최대 100%",
-  },
-  {
-    title: "마지막 품절 상품",
-    subTitle: "공짜다!",
+    state: "SALE",
   },
 ];
