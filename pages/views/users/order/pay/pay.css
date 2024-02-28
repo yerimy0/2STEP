@@ -34,7 +34,8 @@ input[type="tel"] {
 }
 
 input[class="buyer-email"],
-input[class="shipping-address"] {
+input[class="shipping-address"],
+input[class="detailedAddress"] {
   width: calc(100% - 3px);
 }
 

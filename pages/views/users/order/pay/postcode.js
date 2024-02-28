@@ -25,7 +25,7 @@ document.querySelector("button.zipcode-search").addEventListener("click", () => 
   
             document.querySelector("input[name='shipping-zipcode']").value = data.zonecode;
             document.querySelector("input[name='shipping-address']").value = fullAddr;
-            document.querySelector("input[name='shipping-address']").focus();
+            document.querySelector("input[name='detailedAddress']").focus();
         }
     }).open();
 });

@@ -33,6 +33,7 @@
             <button type="button" class="zipcode-search">우편번호 검색</button>
 
             <input type="text" class="shipping-address" name="shipping-address" placeholder="주소" required>
+            <input type="text" class="detailedAddress" name="detailedAddress" placeholder="상세주소" required>
           </div>
           <div class="payment-method">
             <h2>결제 수단 선택</h2>
@@ -51,7 +52,8 @@
       </div>
     </form>
   </body>
-  <script type="module" src="postcode.js"></script>
+  <script src="postcode.js"></script>
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
   <script type="module" src="payment.js"></script>
   <script type="module" src="button.js"></script>
   <script type="module"></script>
