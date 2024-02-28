@@ -1,5 +1,7 @@
-import { PRODUCT_DATA } from "../../../mainpages/data/data.js";
+import PRODUCT_DATA from "../../../../common/data/productdata.js";
+
 import cartCreate from "./cartcreate.js";
+import createOption from "./createoption.js";
 
 // 상품 상세 페이지를 로드하는 함수
 loadProductDetailPage();
@@ -10,7 +12,7 @@ function loadProductDetailPage() {
   );
 
   const selectedProduct = PRODUCT_DATA.data.find(
-    (product) => product.id === Number(productId)
+    (product) => product._id === productId
   );
 
   productShow(selectedProduct);
@@ -28,7 +30,7 @@ function productShow(product) {
 
   div.innerHTML = `
       <div class = image-container>
-        <img src="${product.imageUrl}" alt="신발 예시" />
+        <img src="${product.imgUrl}" alt="신발 예시" />
         <div class='pages'><span>1 / 8</span></div>
       </div>
       <div class="product-information">
@@ -46,20 +48,14 @@ function productShow(product) {
         <div class="product-options">
           <form>
             <div class="select is-small">
-              <select>
+              <select class='color-option'>
                 <option selected disabled>Color</option>
-                <option value="빨강">빨강</option>
-                <option value="파랑">파랑</option>
-                <option value="초록">초록</option>
               </select>
             </div>
 
            <div class="select is-small">
-              <select>
+              <select class='size-option'>
                 <option selected disabled>Size</option>
-                <option value="250">250</option>
-                <option value="260">260</option>
-                <option value="270">270</option>
               </select>
             </div>
           </form>
@@ -73,6 +69,8 @@ function productShow(product) {
     `;
 
   productContainer.appendChild(div);
+
+  createOption(div, product);
 
   cartCreate(div, product);
 }
