@@ -39,3 +39,18 @@ form .payment-container .payment {
   color: #ff0000;
   font-weight: bold;
 }
+
+.order-button {
+  background-color: #2b3bd0;
+  color: #ffffff;
+  width: 220px;
+  height: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 80px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.order-button:hover {
+  background-color: darkblue;
+}

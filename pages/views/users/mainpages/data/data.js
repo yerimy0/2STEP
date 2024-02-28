@@ -10,6 +10,8 @@ export const PRODUCT_DATA = {
       discountRate: 28,
       description: "상품 상세 설명",
       company: "상품 제조사",
+      size: [250, 240, 230],
+      color: ["black", "blue", "white"],
     },
     {
       id: 2,
@@ -21,6 +23,8 @@ export const PRODUCT_DATA = {
       discountRate: 30,
       description: "상품 상세 설명",
       company: "상품 제조사",
+      size: [250, 240, 230],
+      color: ["black", "blue", "white"],
     },
     {
       id: 3,
@@ -32,6 +36,8 @@ export const PRODUCT_DATA = {
       discountRate: 10,
       description: "상품 상세 설명",
       company: "상품 제조사",
+      size: [250, 240, 230],
+      color: ["black", "blue", "white"],
     },
     {
       id: 4,
@@ -43,6 +49,8 @@ export const PRODUCT_DATA = {
       discountRate: 50,
       description: "상품 상세 설명",
       company: "상품 제조사",
+      size: [250, 240, 230],
+      color: ["black", "blue", "white"],
     },
     {
       id: 5,
@@ -54,6 +62,8 @@ export const PRODUCT_DATA = {
       discountRate: 100,
       description: "상품 상세 설명",
       company: "상품 제조사",
+      size: [250, 240, 230],
+      color: ["black", "blue", "white"],
     },
     {
       id: 6,
@@ -65,6 +75,8 @@ export const PRODUCT_DATA = {
       discountRate: 1,
       description: "상품 상세 설명",
       company: "상품 제조사",
+      size: [250, 240, 230],
+      color: ["black", "blue", "white"],
     },
     {
       id: 7,
@@ -76,6 +88,8 @@ export const PRODUCT_DATA = {
       discountRate: 90,
       description: "상품 상세 설명",
       company: "상품 제조사",
+      size: [250, 240, 230],
+      color: ["black", "blue", "white"],
     },
     {
       id: 8,
@@ -87,6 +101,8 @@ export const PRODUCT_DATA = {
       discountRate: 70,
       description: "상품 상세 설명",
       company: "상품 제조사",
+      size: [250, 240, 230],
+      color: ["black", "blue", "white"],
     },
     {
       id: 9,
@@ -98,6 +114,8 @@ export const PRODUCT_DATA = {
       discountRate: 100,
       description: "상품 상세 설명",
       company: "상품 제조사",
+      size: [250, 240, 230],
+      color: ["black", "blue", "white"],
     },
     {
       id: 10,
@@ -109,6 +127,8 @@ export const PRODUCT_DATA = {
       discountRate: 100,
       description: "상품 상세 설명",
       company: "상품 제조사",
+      size: [250, 240, 230],
+      color: ["black", "blue", "white"],
     },
     {
       id: 11,
@@ -120,6 +140,8 @@ export const PRODUCT_DATA = {
       discountRate: 100,
       description: "상품 상세 설명",
       company: "상품 제조사",
+      size: [250, 240, 230],
+      color: ["black", "blue", "white"],
     },
     {
       id: 12,
@@ -131,6 +153,8 @@ export const PRODUCT_DATA = {
       discountRate: 100,
       description: "상품 상세 설명",
       company: "상품 제조사",
+      size: [250, 240, 230],
+      color: ["black", "blue", "white"],
     },
   ],
   error: "string",
