@@ -62,7 +62,7 @@ function CreateTitle(titleData, id) {
   title.classList.add("title-class");
   subTitle.classList.add("subtitle-class");
 
-  title.innerHTML = `${titleData.title}`;
+  title.innerHTML = `<a href = http://localhost:8080/views/users/product/list/list.html?category=${titleData.state}>${titleData.title}<a/>`;
   subTitle.innerHTML = `${titleData.subTitle}`;
 
   popularText.appendChild(title);
