@@ -3,7 +3,7 @@ function createHeader() {
 
   const link = document.createElement("link");
   link.rel = "stylesheet";
-  link.href = "http://localhost:8080/views/common/header/styles.css";
+  link.href = "/views/common/header/styles.css";
   document.head.appendChild(link);
 
   const container = document.createElement("div");
@@ -13,9 +13,9 @@ function createHeader() {
   const logo = document.createElement("div");
   logo.className = "logo";
   const a = document.createElement("a");
-  a.href = "http://localhost:8080/views/users/mainpages/mainpage.html";
+  a.href = "/views/users/mainpages/mainpage.html";
   const img = document.createElement("img");
-  img.src = "http://localhost:8080/views/common/header/2STEP.png";
+  img.src = "/views/common/header/2STEP.png";
   img.alt = "로고";
   a.appendChild(img);
   logo.appendChild(a);
@@ -48,7 +48,7 @@ function createHeader() {
       li.textContent = item;
     } else {
       const a = document.createElement("a");
-      a.href = `http://localhost:8080/views/users/product/list/list.html?category=${item}`;
+      a.href = `/views/users/product/list/list.html?category=${item}`;
       a.textContent = item;
       li.appendChild(a);
     }
@@ -79,16 +79,16 @@ function createHeader() {
 
 function userMenuCreate(item, loginSuccess) {
   if (item === "LOGIN") {
-    return `http://localhost:8080/views/users/loginpages/login.html?login=false`;
+    return `/views/users/loginpages/login.html?login=false`;
   }
   if (item === "LOGOUT") {
-    return `http://localhost:8080/views/users/mainpages/mainpage.html?login=false`;
+    return `/views/users/mainpages/mainpage.html?login=false`;
   }
   if (item === "JOIN") {
-    return `http://localhost:8080/views/users/signuppages/signup.html?login=false`;
+    return `/views/users/signuppages/signup.html?login=false`;
   }
   if (item === "CART") {
-    return `http://localhost:8080/views/users/cart/cart.html?login=${loginSuccess}`;
+    return `/views/users/cart/cart.html?login=${loginSuccess}`;
   }
   if (item === "MYPAGE") {
     return;
