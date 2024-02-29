@@ -8,7 +8,6 @@ const findProducts = async () => {
     );
     if (res.ok) {
       const data = await res.json();
-      console.log(data);
       return data;
     } else {
       console.error(res.status, res.statusText, res.statusCode);
