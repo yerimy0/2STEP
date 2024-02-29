@@ -23,6 +23,7 @@
 .product-container .product-show .image-container img {
   height: 600px;
   width: 100%;
+  border: 1px solid #d9d9d9;
 }
 
 .product-container .product-show .image-container .pages {
