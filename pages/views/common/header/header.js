@@ -110,7 +110,8 @@ function userMenuCreate(item, loginSuccess) {
       a.addEventListener("click", function (e) {
         e.preventDefault();
 
-        alert("준비중");
+        alert("비회원은 준비중입니다.");
+        window.location.href = `/views/users/loginpages/login.html`;
       });
     }
   }
