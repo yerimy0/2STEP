@@ -1,11 +1,15 @@
-// 마이페이지 첫 화면을 주문 내역으로 고정
-document.addEventListener("DOMContentLoaded", function() {
-  showOrderHistory(); 
-});
+// // 마이페이지 첫 화면을 주문 내역으로 고정
+// document.addEventListener("DOMContentLoaded", function () {
+//   showOrderHistory();
+// });
+
+document
+  .querySelector("#showOrderHistory")
+  .addEventListener("click", () => showOrderHistory());
 
 // 주문 내역 표시 함수
 function showOrderHistory() {
-    document.querySelector(".main-content").innerHTML = `
+  document.querySelector(".main-content").innerHTML = `
     <div class="page-title">주문내역</div>
     <div class="separator"></div>
     <div class="order-item">
@@ -24,3 +28,5 @@ function showOrderHistory() {
     </div>
   `;
 }
+
+export default showOrderHistory;

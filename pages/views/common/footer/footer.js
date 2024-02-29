@@ -6,7 +6,7 @@ function createFooter() {
 
   const link = document.createElement("link");
   link.rel = "stylesheet";
-  link.href = "http://localhost:8080/views/common/footer/styles.css";
+  link.href = "/views/common/footer/styles.css";
   document.head.appendChild(link);
 
   const container = document.createElement("div");
@@ -16,9 +16,9 @@ function createFooter() {
   const logo = document.createElement("div");
   logo.className = "logo";
   const a = document.createElement("a");
-  a.href = "http://localhost:8080/views/users/mainpages/mainpage.html";
+  a.href = "/views/users/mainpages/mainpage.html";
   const img = document.createElement("img");
-  img.src = "http://localhost:8080/views/common/footer/2STEP.png";
+  img.src = "/views/common/footer/2STEP.png";
   img.alt = "로고";
   a.appendChild(img);
   logo.appendChild(a);

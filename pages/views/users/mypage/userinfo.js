@@ -1,4 +1,8 @@
 // 이메일 및 비밀번호 확인 폼 표시 함수
+document
+  .querySelector("#showPasswordForm")
+  .addEventListener("click", () => showEmailPasswordForm());
+
 function showEmailPasswordForm() {
   document.querySelector(".main-content").innerHTML = `
     <div class="page-title">개인정보수정</div>
@@ -11,9 +15,13 @@ function showEmailPasswordForm() {
       <input type="email" class="email" ><br>
       <label for="password">비밀번호 :</label>
       <input type="password" class="password" ><br>
-      <button class="check-button" onclick="validateEmailPassword()">확인</button>
+      <button class="check-button" id="validateEmailPassword">확인</button>
     </div>
   `;
+
+  document
+    .querySelector("#validateEmailPassword")
+    .addEventListener("click", () => validateEmailPassword());
 }
 
 // 이메일 및 비밀번호 확인 함수
@@ -24,9 +32,9 @@ function validateEmailPassword() {
   // 임시로 빈 값이 아닌지만 확인하는 예시를 제공합니다.
   if (email === "example@example.com" && password === "password") {
     // 이메일 및 비밀번호가 유효한 경우 개인정보 수정 폼을 표시합니다.
-      showProfileUpdateForm();
+    showProfileUpdateForm();
   } else {
-      alert("이메일과 비밀번호를 확인해 주세요");
+    alert("이메일과 비밀번호를 확인해 주세요");
   }
 }
 
