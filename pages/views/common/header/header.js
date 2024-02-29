@@ -61,38 +61,61 @@ function createHeader() {
 
   let userMenuItems = ["LOGIN", "JOIN", "CART", "MYPAGE"];
 
-  let loginSuccess = new URLSearchParams(window.location.search).get("login");
+  const loginToken = localStorage.getItem("token");
 
-  if (loginSuccess === "true") {
+  let loginSuccess = false;
+
+  if (loginToken) {
+    loginSuccess = true;
     userMenuItems = ["LOGOUT", "CART", "MYPAGE"];
   }
 
   userMenuItems.forEach((item) => {
     const li = document.createElement("li");
-    const a = document.createElement("a");
-    a.href = userMenuCreate(item, loginSuccess);
-    a.textContent = item;
+    const a = userMenuCreate(item, loginSuccess);
     li.appendChild(a);
     userMenu.appendChild(li);
   });
 }
 
 function userMenuCreate(item, loginSuccess) {
+  const a = document.createElement("a");
+  a.textContent = item;
   if (item === "LOGIN") {
-    return `/views/users/loginpages/login.html?login=false`;
+    a.href = `/views/users/loginpages/login.html`;
+    a.textContent = item;
   }
   if (item === "LOGOUT") {
-    return `/views/users/mainpages/mainpage.html?login=false`;
+    a.textContent = item;
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      localStorage.removeItem("token");
+      location.reload();
+    });
   }
   if (item === "JOIN") {
-    return `/views/users/signuppages/signup.html?login=false`;
+    a.href = `/views/users/signuppages/signup.html`;
+    a.textContent = item;
   }
   if (item === "CART") {
-    return `/views/users/cart/cart.html?login=${loginSuccess}`;
+    a.href = `/views/users/cart/cart.html`;
+    a.textContent = item;
   }
   if (item === "MYPAGE") {
-    return;
+    a.textContent = item;
+    if (loginSuccess) {
+      a.href = `/views/users/mypage/mypage.html`;
+    } else {
+      a.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        alert("준비중");
+      });
+    }
   }
+
+  return a;
 }
 
 export default createHeader;
