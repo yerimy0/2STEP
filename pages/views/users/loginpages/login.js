@@ -30,8 +30,7 @@ async function handleLogin() {
       const data = await response.json();
       const token = data.data; // 서버에서 받은 토큰
       localStorage.setItem("token", token); // 토큰을 로컬 스토리지에 저장
-      window.location.href =
-        "http://localhost:8080/views/users/mainpages/mainpage.html"; // 로그인 성공 시 페이지 이동
+      window.location.href = "/views/users/mainpages/mainpage.html"; // 로그인 성공 시 페이지 이동
     } else {
       alert(`가입된 정보가 없습니다.`);
     }
@@ -55,8 +54,7 @@ document.addEventListener("click", function (event) {
   if (target.classList.contains("login-btn")) {
     handleLogin(); // 로그인 함수 호출
   } else if (target.classList.contains("signup-btn")) {
-    window.location.href =
-      "http://localhost:8080/views/users/signuppages/signup.html"; // 회원가입 페이지로 이동
+    window.location.href = "/views/users/signuppages/signup.html"; // 회원가입 페이지로 이동
   } else if (target.classList.contains("adminlogin-link")) {
     window.location.href = "URL"; // 관리자 로그인 페이지로 이동
   }
