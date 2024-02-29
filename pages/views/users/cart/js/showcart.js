@@ -14,7 +14,7 @@ function showCart(cart) {
     const uniqueId = `${product.id}_${product.selectedColor}_${product.selectedSize}_${index}`;
 
     div.innerHTML = `
-          <img class='product-img' src= "${product.imageUrl}" alt= "${
+          <img class='product-img' src= "${product.imgUrl}" alt= "${
       product.name
     }">
           <div class='product-information'>
