@@ -20,7 +20,7 @@ main .eventBanner {
 
 main .eventBanner .banner {
   width: 1216px;
-  height: 240px;
+  height: 600px;
 }
 
 main .eventBanner .banner img {
@@ -36,7 +36,7 @@ main .weeklyBestBanner {
 
 main .weeklyBestBanner .banner {
   width: 1216px;
-  height: 180px;
+  height: 450px;
 }
 
 main .weeklyBestBanner .banner img {

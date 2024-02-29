@@ -5,13 +5,13 @@
 }
 
 footer {
-  background-color: #2b3bd0;
+  background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
   width: 100%;
-  height: 200px;
+  height: 300px;
 }
 
 footer .container-box {
