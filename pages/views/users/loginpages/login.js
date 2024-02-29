@@ -33,7 +33,7 @@ async function handleLogin() {
       window.location.href =
         "http://localhost:8080/views/users/mainpages/mainpage.html"; // 로그인 성공 시 페이지 이동
     } else {
-      alert(`로그인 실패`);
+      alert(`가입된 정보가 없습니다.`);
     }
   } catch (error) {
     console.error("로그인 요청 실패:", error);
@@ -55,7 +55,8 @@ document.addEventListener("click", function (event) {
   if (target.classList.contains("login-btn")) {
     handleLogin(); // 로그인 함수 호출
   } else if (target.classList.contains("signup-btn")) {
-    window.location.href = "URL"; // 회원가입 페이지로 이동
+    window.location.href =
+      "http://localhost:8080/views/users/signuppages/signup.html"; // 회원가입 페이지로 이동
   } else if (target.classList.contains("adminlogin-link")) {
     window.location.href = "URL"; // 관리자 로그인 페이지로 이동
   }
