@@ -1,9 +1,14 @@
+import showOrderHistory from "./orderdetails";
+
 // 주문 수정 버튼 클릭 시 주문 정보 수정 페이지 표시 함수
-document.addEventListener("DOMContentLoaded", function() {
-    showOrderHistory(); 
-    document.querySelectorAll(".order-button")[1].addEventListener("click", showOrderEditPage);
-  });
-  // 주문 정보 수정 페이지 표시 함수
+document.addEventListener("DOMContentLoaded", function () {
+  showOrderHistory();
+  document
+    .querySelectorAll(".order-button")[1]
+    .addEventListener("click", showOrderEditPage());
+});
+
+// 주문 정보 수정 페이지 표시 함수
 function showOrderEditPage() {
   document.querySelector(".main-content").innerHTML = `
   <div class="page-title">주문 정보 수정</div>
@@ -75,27 +80,31 @@ function showOrderEditPage() {
 
 // 상품 수량을 조절하는 함수
 function adjustQuantity(action, productId) {
-  const quantityInput = document.querySelector(`.order-item[data-product-id="${productId}"] .quantity-input`);
+  const quantityInput = document.querySelector(
+    `.order-item[data-product-id="${productId}"] .quantity-input`
+  );
   let currentQuantity = parseInt(quantityInput.value);
-  if (action === 'increment') {
-      currentQuantity++;
-  } else if (action === 'decrement' && currentQuantity > 1) {
-      currentQuantity--;
+  if (action === "increment") {
+    currentQuantity++;
+  } else if (action === "decrement" && currentQuantity > 1) {
+    currentQuantity--;
   }
   quantityInput.value = currentQuantity;
 }
 
 // 상품 삭제하는 함수
 function deleteProduct(productId) {
-  const productItem = document.querySelector(`.order-item[data-product-id="${productId}"]`);
+  const productItem = document.querySelector(
+    `.order-item[data-product-id="${productId}"]`
+  );
   productItem.remove();
 }
 
 // 전체 선택 및 해제 함수
 function toggleSelectAll() {
-  const checkboxes = document.querySelectorAll('.product-checkbox');
-  const selectAllCheckbox = document.querySelector('.select-all-checkbox');
-  checkboxes.forEach(checkbox => {
-      checkbox.checked = selectAllCheckbox.checked;
+  const checkboxes = document.querySelectorAll(".product-checkbox");
+  const selectAllCheckbox = document.querySelector(".select-all-checkbox");
+  checkboxes.forEach((checkbox) => {
+    checkbox.checked = selectAllCheckbox.checked;
   });
 }
