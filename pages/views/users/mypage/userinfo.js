@@ -1,26 +1,36 @@
+import showPostcodeSearch from "./postcode.js";
+import submitForm from "./signout.js";
+
 // 이메일 및 비밀번호 확인 폼 표시 함수
 document
   .querySelector("#showPasswordForm")
   .addEventListener("click", () => fetchUserProfile());
 
 // 사용자 정보 가져오는 함수
-function fetchUserProfile() {
+async function fetchUserProfile() {
   // 토큰 가져오기
-  const token = localStorage.getItem('token');
-
-  fetch('http://kdt-sw-8-team02.elicecoding.com/api/v1/me', {
-    method: 'GET',
-    headers: {
-      'Authorization': `Bearer ${token}`
+  try {
+    const token = localStorage.getItem("token");
+    const res = await fetch(
+      "http://kdt-sw-8-team02.elicecoding.com/api/v1/me",
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    if (res.ok) {
+      const data = await res.json();
+      showProfileUpdateForm(data.data);
+      console.log(data);
+    } else {
+      console.error(res.status, res.statusText, res.statusCode);
     }
-  })
-    .then(response => response.json())
-    .then(data => {
-      showProfileUpdateForm(data);
-    })
-    .catch(error => {
-      console.error('Error fetching user profile:', error);
-    });
+  } catch (e) {
+    console.error(e);
+  }
 }
 
 // 개인정보 수정 폼 표시 함수
@@ -36,16 +46,16 @@ function showProfileUpdateForm(userProfile) {
       <label for="confirm-password">새 비밀번호 확인 :</label>
       <input type="password" class="confirm-password" placeholder="새 비밀번호 확인"><br>
       <label for="name">이름 :</label>
-      <input type="text" class="lastname" placeholder="성" value="${userProfile.lastname}">
-      <input type="text" class="firstname" placeholder="이름" value="${userProfile.firstname}">
+      <input type="text" class="lastname" placeholder="성" value="${userProfile.lastName}">
+      <input type="text" class="firstname" placeholder="이름" value="${userProfile.firstName}">
       <div class="address-wrap">
         <label for="address">주소 :</label>
         <div class="zipcode-container">
-          <input type="text" class="postalCode" maxlength="5" placeholder="우편번호" readonly>
+          <input type="text" class="postalCode" maxlength="5" placeholder=${userProfile.address.postalCode} readonly>
           <button id="searchPostcodeButton" type="button">우편번호찾기</button>
         </div>
-        <input type="text" class="street" placeholder="주소" readonly>
-        <input type="text" class="detailedAddress" placeholder="상세주소">
+        <input type="text" class="street" placeholder=${userProfile.address.street} readonly>
+        <input type="text" class="detailedAddress" placeholder=${userProfile.address.detailedAddress}>
       </div>
     </div>
     <div class="separator"></div>
@@ -54,7 +64,13 @@ function showProfileUpdateForm(userProfile) {
       <button class="edit-profile-button">회원정보수정</button>
     </div>
   `;
-}
 
-// 이벤트 리스너 등록
-document.getElementById("searchPostcodeButton").addEventListener("click", showPostcodeSearch);
+  // 이벤트 리스너 등록
+  document
+    .getElementById("searchPostcodeButton")
+    .addEventListener("click", showPostcodeSearch);
+
+  document
+    .querySelector(".signout-button")
+    .addEventListener("click", () => submitForm());
+}
