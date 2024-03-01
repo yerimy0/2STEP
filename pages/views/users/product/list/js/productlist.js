@@ -1,4 +1,5 @@
 import PRODUCT_DATA from "../../../../common/data/productdata";
+import URL from "../../../../common/data/url";
 
 const category = new URLSearchParams(window.location.search).get("category");
 
@@ -37,9 +38,9 @@ function createProductSection(product) {
   const priceClassName =
     product.discountRate > 0 ? "product-price" : "nodiscount-product-price";
   return `
-    <a href='../details/details.html?productId=${product._id}'><img src="${
-    product.imgUrl
-  }" alt="신발 예시" /></a>
+    <a href='${URL.PRODUCT_DETAIL_PAGE_URL}?productId=${
+    product._id
+  }'><img src="${product.imgUrl}" alt="신발 예시" /></a>
     <div class="product-information">
       <p class='product-name'>${product.name}</p>
       <p class='product-category'>${product.category}</p>

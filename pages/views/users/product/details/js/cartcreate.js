@@ -1,3 +1,4 @@
+import URL from "../../../../common/data/url";
 function cartCreate(el, product) {
   const cartButton = el.querySelector(".cart-button");
   const purchaseButton = el.querySelector(".purchase-button");
@@ -9,7 +10,7 @@ function cartCreate(el, product) {
   purchaseButton.addEventListener("click", () => {
     if (addCart(el, product)) {
       alert("장바구니에 상품이 추가되었습니다.");
-      window.location.href = `/views/users/cart/cart.html`;
+      window.location.href = URL.CART_URL;
     }
   });
 }

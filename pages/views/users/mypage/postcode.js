@@ -1,6 +1,3 @@
-// 우편번호검색 기능
-document.getElementById("searchPostcodeButton").addEventListener("click", showPostcodeSearch);
-
 function showPostcodeSearch() {
   new daum.Postcode({
     oncomplete: function (data) {
@@ -32,3 +29,5 @@ function showPostcodeSearch() {
     },
   }).open();
 }
+
+export default showPostcodeSearch;
