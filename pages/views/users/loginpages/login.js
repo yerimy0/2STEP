@@ -1,3 +1,11 @@
+window.addEventListener("load", function () {
+  const loginToken = localStorage.getItem("token");
+
+  if (loginToken) {
+    window.location.href = "/views/users/mainpages/mainpage.html";
+  }
+});
+
 // 로그인 처리 함수
 async function handleLogin() {
   const email = document.querySelector(".email").value; // 이메일 입력값 가져오기
