@@ -4,6 +4,9 @@
   font-family: Arial, sans-serif;
   text-decoration: none;
 }
+a {
+  cursor: pointer;
+}
 
 header {
   background-color: white;

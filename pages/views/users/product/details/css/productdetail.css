@@ -84,6 +84,15 @@
   padding-left: 8px;
 }
 
+.product-container
+  .product-show
+  .product-information
+  .nodiscount-product-price {
+  color: #000000;
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 30px;
+}
 .product-container .product-show .product-information .product-company {
   color: #000000;
   font-size: 12px;

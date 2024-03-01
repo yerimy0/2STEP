@@ -96,3 +96,13 @@
   font-weight: bold;
   padding-left: 8px;
 }
+
+.productBanner
+  .popular-product
+  .put-product-information
+  .nodiscount-product-price {
+  color: #000000;
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 30px;
+}

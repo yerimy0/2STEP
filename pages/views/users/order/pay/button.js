@@ -1,22 +1,84 @@
 // 장바구니로 돌아가기 버튼
 function goBackToCart() {
-    window.location.href = "장바구니 페이지 URL";
-    console.log("장바구니로 돌아갑니다.");
-  }
+  window.location.href = "/views/users/cart/cart.html";
+}
+
+document
+  .querySelector(".back-button")
+  .addEventListener("click", () => goBackToCart());
 
 // 결제
-document.addEventListener("DOMContentLoaded", function() {
-  const paymentButton = document.querySelector('.payment button[type="submit"]');
-  paymentButton.addEventListener("click", function() {
-    // 여기에 결제 처리하는 기능을 넣으시면 됩니다.
-    console.log("결제가 진행됩니다.");
 
-    // 결제 완료 후 complete 창으로 넘어가는 함수 호출
-    redirectToCompletePage();
-  });
+const creditCardCheckbox = document.querySelector(".credit-card");
+const paymentButton = document.querySelector(".order");
+
+paymentButton.addEventListener("click", function () {
+  if (!creditCardCheckbox.checked) {
+    alert("결제 수단을 선택해주세요.");
+    return false; // 폼 전송 막기
+  }
+  pay();
 });
 
-function redirectToCompletePage() {
-  // complete 창으로 페이지 이동
-  window.location.href = "complete.html";
+async function pay() {
+  const name = document.querySelector(".buyer-name").value;
+  const phone = document.querySelector(".buyer-phone").value;
+  const email = document.querySelector(".buyer-email").value;
+
+  const shippingName = document.querySelector(".shipping-name").value;
+  const shippingPhone = document.querySelector(".shipping-phone").value;
+  const zipCode = Number(document.querySelector(".shipping-zipcode").value);
+  const address =
+    document.querySelector(".shipping-address").value +
+    document.querySelector(".detailedAddress").value;
+
+  const totalPrice = Number(
+    document.querySelector(".total-price").innerHTML.split("원")[0]
+  );
+
+  const products = [];
+
+  const cart = JSON.parse(localStorage.getItem("cart"));
+  for (const product of cart) {
+    products.push(product._id);
+  }
+
+  const customer = {
+    name,
+    phone,
+    email,
+  };
+  const delivery = {
+    name: shippingName,
+    phone: shippingPhone,
+    postcode: zipCode,
+    address,
+  };
+  const deliverStatus = false;
+
+  const data = { products, totalPrice, deliverStatus, customer, delivery };
+  console.log(data);
+  try {
+    const response = await fetch(
+      "http://kdt-sw-8-team02.elicecoding.com/api/v1/orders",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...data }),
+      }
+    );
+
+    console.log(response);
+    if (response.ok) {
+      localStorage.setItem("cart", []);
+      localStorage.removeItem("totalPrice");
+      // window.location.href = "/views/users/order/complete/complete.html";
+    } else {
+      throw new Error("실패");
+    }
+  } catch (error) {
+    alert("주문 실패 했습니다. 다시 시도해주세요");
+  }
 }
