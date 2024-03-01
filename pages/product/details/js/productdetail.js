@@ -44,7 +44,7 @@ function productShow(product) {
   div.innerHTML = `
       <div class = image-container>
         <img src="${product.imgUrl}" alt="신발 예시" />
-        <div class='pages'><span>1 / 8</span></div>
+        
       </div>
       <div class="product-information">
         <p class='product-name'>${product.name}</p>
