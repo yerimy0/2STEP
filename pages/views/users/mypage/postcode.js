@@ -1,5 +1,6 @@
 // 우편번호검색 기능
-showPostcodeSearch();
+document.getElementById("searchPostcodeButton").addEventListener("click", showPostcodeSearch);
+
 function showPostcodeSearch() {
   new daum.Postcode({
     oncomplete: function (data) {
