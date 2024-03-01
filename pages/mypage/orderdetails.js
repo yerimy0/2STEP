@@ -18,9 +18,9 @@ const findOrders = async () => {
     );
     if (res.ok) {
       const data = await res.json();
-      // console.log(data);
+      console.log(data);
     } else {
-      console.error(res.status, res.statusText, res.statusCode);
+      throw new Error("API 에러");
     }
   } catch (e) {
     console.error(e);
