@@ -51,17 +51,17 @@ function showProfileUpdateForm(userProfile) {
       <div class="address-wrap">
         <label for="address">주소 :</label>
         <div class="zipcode-container">
-          <input type="text" class="postalCode" maxlength="5" value=${userProfile.address.postalCode} readonly>
+          <input type="text" class="postalCode" maxlength="5" value="${userProfile.address.postalCode}" readonly>
           <button id="searchPostcodeButton" type="button">우편번호찾기</button>
         </div>
-        <input type="text" class="street" value=${userProfile.address.street} readonly>
-        <input type="text" class="detailedAddress" value=${userProfile.address.detailedAddress}>
+        <input type="text" class="street" value="${userProfile.address.street}" readonly>
+        <input type="text" class="detailedAddress" value="${userProfile.address.detailedAddress}">
       </div>
     </div>
     <div class="separator"></div>
     <div class="button-container">
+    <button class="edit-profile-button">회원정보수정</button>
       <button class="signout-button">탈퇴하기</button>
-      <button class="edit-profile-button">회원정보수정</button>
     </div>
   `;
 
