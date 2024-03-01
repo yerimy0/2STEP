@@ -39,7 +39,8 @@ async function updateProfile() {
     );
     if (res.ok) {
       const data = await res.json();
-      // console.log(data);
+      alert("회원 정보 수정 되었습니다.");
+      location.reload();
     } else {
       throw new Error("통신 에러");
     }
