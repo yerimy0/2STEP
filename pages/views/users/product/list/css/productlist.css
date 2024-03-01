@@ -69,3 +69,9 @@
   font-weight: bold;
   padding-left: 8px;
 }
+.product .product-information .nodiscount-product-price {
+  color: #000000;
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 23.59px;
+}

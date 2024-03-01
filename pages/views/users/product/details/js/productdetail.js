@@ -3,7 +3,6 @@ import PRODUCT_DATA from "../../../../common/data/productdata.js";
 import cartCreate from "./cartcreate.js";
 import createOption from "./createoption.js";
 
-// 상품 상세 페이지를 로드하는 함수
 loadProductDetailPage();
 
 function loadProductDetailPage() {
@@ -18,15 +17,30 @@ function loadProductDetailPage() {
   productShow(selectedProduct);
 }
 
+function createDiscountSection(product) {
+  if (product.discountRate > 0) {
+    const discountPrice = Math.floor(
+      product.price * (1 - product.discountRate / 100)
+    );
+    return `
+      <div>
+        <span class='product-discount'>${product.discountRate + "%"}</span>
+        <span class='product-discountPrice'>${
+          discountPrice.toLocaleString() + " won"
+        }</span>
+      </div>`;
+  }
+  return "";
+}
+
 function productShow(product) {
   const productContainer = document.querySelector(".product-container");
 
   const div = document.createElement("div");
   div.classList.add("product-show");
 
-  const discountPrice = Math.floor(
-    product.price * (1 - product.discountRate / 100)
-  );
+  const priceClassName =
+    product.discountRate > 0 ? "product-price" : "nodiscount-product-price";
 
   div.innerHTML = `
       <div class = image-container>
@@ -36,13 +50,10 @@ function productShow(product) {
       <div class="product-information">
         <p class='product-name'>${product.name}</p>
         <p class='product-category'>${product.category}</p>
-        <p class='product-price'>${product.price.toLocaleString() + " won"}</p>
-        <div>
-          <span class='product-discount'>${product.discountRate + "%"}</span>
-          <span class='product-discountPrice'>${
-            discountPrice.toLocaleString() + " won"
-          }</span>
-        </div>
+        <p class='${priceClassName}'>${
+    product.price.toLocaleString() + " won"
+  }</p>
+        ${createDiscountSection(product)}
         <p class='product-company'>제조사: ${product.company}</p>
         
         <div class="product-options">
