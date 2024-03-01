@@ -27,7 +27,7 @@ async function pay() {
 
   const shippingName = document.querySelector(".shipping-name").value;
   const shippingPhone = document.querySelector(".shipping-phone").value;
-  const zipCode = Number(document.querySelector(".shipping-zipcode").value);
+  const postcode = document.querySelector(".shipping-zipcode").value;
 
   const zipAddress = document.querySelector(".shipping-address").value;
   const detailedAddress = document.querySelector(".detailedAddress").value;
@@ -38,7 +38,7 @@ async function pay() {
     email === "" ||
     shippingName === "" ||
     shippingPhone === "" ||
-    zipCode === 0 ||
+    postcode === "" ||
     zipAddress === "" ||
     detailedAddress === ""
   ) {
@@ -66,13 +66,15 @@ async function pay() {
   const delivery = {
     name: shippingName,
     phone: shippingPhone,
-    postcode: zipCode,
+    postcode,
     address,
   };
   const deliverStatus = false;
 
   const data = { products, totalPrice, deliverStatus, customer, delivery };
-  console.log(data);
+
+  const token = localStorage.getItem("token");
+
   try {
     const response = await fetch(
       "http://kdt-sw-8-team02.elicecoding.com/api/v1/orders",
@@ -80,6 +82,7 @@ async function pay() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({ ...data }),
       }
@@ -87,9 +90,9 @@ async function pay() {
 
     console.log(response);
     if (response.ok) {
-      localStorage.setItem("cart", []);
+      localStorage.removeItem("cart");
       localStorage.removeItem("totalPrice");
-      // window.location.href = "/views/users/order/complete/complete.html";
+      window.location.href = "/views/users/order/complete/complete.html";
     } else {
       throw new Error("실패");
     }
