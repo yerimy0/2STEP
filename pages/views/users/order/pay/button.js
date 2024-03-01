@@ -58,6 +58,8 @@ async function pay() {
     products.push(product._id);
   }
 
+  const userId = localStorage.getItem("userId");
+
   const customer = {
     name,
     phone,
@@ -71,7 +73,14 @@ async function pay() {
   };
   const deliverStatus = false;
 
-  const data = { products, totalPrice, deliverStatus, customer, delivery };
+  const data = {
+    products,
+    totalPrice,
+    deliverStatus,
+    customer,
+    delivery,
+    email: userId,
+  };
 
   const token = localStorage.getItem("token");
 

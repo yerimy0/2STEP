@@ -1,5 +1,6 @@
 import showPostcodeSearch from "./postcode.js";
 import submitForm from "./signout.js";
+import updateProfile from "./userinfoedit.js";
 
 // 이메일 및 비밀번호 확인 폼 표시 함수
 document
@@ -24,9 +25,8 @@ async function fetchUserProfile() {
     if (res.ok) {
       const data = await res.json();
       showProfileUpdateForm(data.data);
-      console.log(data);
     } else {
-      console.error(res.status, res.statusText, res.statusCode);
+      throw new Error("에러");
     }
   } catch (e) {
     console.error(e);
@@ -51,11 +51,11 @@ function showProfileUpdateForm(userProfile) {
       <div class="address-wrap">
         <label for="address">주소 :</label>
         <div class="zipcode-container">
-          <input type="text" class="postalCode" maxlength="5" placeholder=${userProfile.address.postalCode} readonly>
+          <input type="text" class="postalCode" maxlength="5" value=${userProfile.address.postalCode} readonly>
           <button id="searchPostcodeButton" type="button">우편번호찾기</button>
         </div>
-        <input type="text" class="street" placeholder=${userProfile.address.street} readonly>
-        <input type="text" class="detailedAddress" placeholder=${userProfile.address.detailedAddress}>
+        <input type="text" class="street" value=${userProfile.address.street} readonly>
+        <input type="text" class="detailedAddress" value=${userProfile.address.detailedAddress}>
       </div>
     </div>
     <div class="separator"></div>
@@ -73,4 +73,8 @@ function showProfileUpdateForm(userProfile) {
   document
     .querySelector(".signout-button")
     .addEventListener("click", () => submitForm());
+
+  document
+    .querySelector(".edit-profile-button")
+    .addEventListener("click", () => updateProfile());
 }

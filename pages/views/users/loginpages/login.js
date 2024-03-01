@@ -38,6 +38,8 @@ async function handleLogin() {
       const data = await response.json();
       const token = data.data; // 서버에서 받은 토큰
       localStorage.setItem("token", token); // 토큰을 로컬 스토리지에 저장
+      localStorage.setItem("userId", email); // 유저아이디를 로컬 스토리지에 저장
+
       window.location.href = "/views/users/mainpages/mainpage.html"; // 로그인 성공 시 페이지 이동
     } else {
       throw new Error("로그인 실패");
