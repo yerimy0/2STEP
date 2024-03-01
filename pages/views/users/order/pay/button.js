@@ -1,6 +1,8 @@
+import URL from "../../../common/data/url";
+
 // 장바구니로 돌아가기 버튼
 function goBackToCart() {
-  window.location.href = "/views/users/cart/cart.html";
+  window.location.href = URL.CART_URL;
 }
 
 document
@@ -101,7 +103,7 @@ async function pay() {
     if (response.ok) {
       localStorage.removeItem("cart");
       localStorage.removeItem("totalPrice");
-      window.location.href = "/views/users/order/complete/complete.html";
+      window.location.href = URL.COMPLETE_URL;
     } else {
       throw new Error("실패");
     }

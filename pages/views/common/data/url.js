@@ -6,6 +6,7 @@ const URL = {
   MY_PAGE_URL: "/views/users/mypage/mypage.html",
   PRODUCT_LIST_PAGE_URL: "/views/users/product/list/list.html",
   PRODUCT_DETAIL_PAGE_URL: "/views/users/product/details/details.html",
+  COMPLETE_URL: "/views/users/order/complete/complete.html",
 };
 
 export default URL;

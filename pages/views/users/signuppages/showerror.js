@@ -1,3 +1,5 @@
+import URL from "../../common/data/url";
+
 async function signup(e) {
   e.preventDefault(); // 기본 이벤트 중지
 
@@ -52,7 +54,7 @@ async function signup(e) {
     );
     if (response.ok) {
       alert("회원가입을 축하드립니다! 2STEP과 한걸음 더 나아가요.");
-      window.location.href = "/views/users/mainpages/mainpage.html";
+      window.location.href = URL.MAIN_PAGE_URL;
     } else {
       throw new Error("이미 가입된 정보가 존재합니다.");
     }

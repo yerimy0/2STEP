@@ -1,3 +1,5 @@
+import URL from "../data/url";
+
 function createHeader() {
   const header = document.getElementById("header");
 
@@ -13,7 +15,7 @@ function createHeader() {
   const logo = document.createElement("div");
   logo.className = "logo";
   const a = document.createElement("a");
-  a.href = "/views/users/mainpages/mainpage.html";
+  a.href = URL.MAIN_PAGE_URL;
   const img = document.createElement("img");
   img.src = "/views/common/header/2STEP.png";
   img.alt = "로고";
@@ -48,7 +50,7 @@ function createHeader() {
       li.textContent = item;
     } else {
       const a = document.createElement("a");
-      a.href = `/views/users/product/list/list.html?category=${item}`;
+      a.href = `${URL.PRODUCT_LIST_PAGE_URL}?category=${item}`;
       a.textContent = item;
       li.appendChild(a);
     }
@@ -82,7 +84,7 @@ function userMenuCreate(item, loginSuccess) {
   const a = document.createElement("a");
   a.textContent = item;
   if (item === "LOGIN") {
-    a.href = `/views/users/loginpages/login.html`;
+    a.href = URL.LOGIN_URL;
     a.textContent = item;
   }
   if (item === "LOGOUT") {
@@ -95,23 +97,23 @@ function userMenuCreate(item, loginSuccess) {
     });
   }
   if (item === "JOIN") {
-    a.href = `/views/users/signuppages/signup.html`;
+    a.href = URL.SIGN_UP_URL;
     a.textContent = item;
   }
   if (item === "CART") {
-    a.href = `/views/users/cart/cart.html`;
+    a.href = URL.CART_URL;
     a.textContent = item;
   }
   if (item === "MYPAGE") {
     a.textContent = item;
     if (loginSuccess) {
-      a.href = `/views/users/mypage/mypage.html`;
+      a.href = URL.MY_PAGE_URL;
     } else {
       a.addEventListener("click", function (e) {
         e.preventDefault();
 
         alert("비회원은 준비중입니다.");
-        window.location.href = `/views/users/loginpages/login.html`;
+        window.location.href = URL.LOGIN_URL;
       });
     }
   }

@@ -85,9 +85,9 @@ function adjustQuantity(action, productId) {
   );
   let currentQuantity = parseInt(quantityInput.value);
   if (action === "increment") {
-    currentQuantity++;
+    currentQuantity += 1;
   } else if (action === "decrement" && currentQuantity > 1) {
-    currentQuantity--;
+    currentQuantity -= 1;
   }
   quantityInput.value = currentQuantity;
 }

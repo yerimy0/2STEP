@@ -1,3 +1,4 @@
+import URL from "../../../common/data/url";
 function createDiscountSection(product) {
   if (product.discountRate > 0) {
     const discountPrice = Math.floor(
@@ -19,9 +20,7 @@ function createProductSection(product) {
     product.discountRate > 0 ? "product-price" : "nodiscount-product-price";
   return `
     <div class="put-product">
-      <a href="/views/users/product/details/details.html?productId=${
-        product._id
-      }">
+      <a href=${URL.PRODUCT_DETAIL_PAGE_URL}?productId=${product._id}>
         <img src=${product.imgUrl} alt="신발 예시" />
         <button class="button">담기</button>
       </a>

@@ -1,3 +1,4 @@
+import URL from "../../common/data/url";
 // 탈퇴하기 함수
 async function deleteAccount() {
   try {
@@ -16,7 +17,7 @@ async function deleteAccount() {
 
     if (response.ok) {
       localStorage.removeItem("token");
-      window.location.href = "/views/users/mainpages/mainpage.html";
+      window.location.href = URL.MAIN_PAGE_URL;
     } else {
       const errorData = await response.json();
       throw new Error(errorData.message);
