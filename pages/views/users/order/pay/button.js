@@ -1,6 +1,8 @@
+import URL from "../../../common/data/url";
+
 // 장바구니로 돌아가기 버튼
 function goBackToCart() {
-  window.location.href = "/views/users/cart/cart.html";
+  window.location.href = URL.CART_URL;
 }
 
 document
@@ -27,11 +29,26 @@ async function pay() {
 
   const shippingName = document.querySelector(".shipping-name").value;
   const shippingPhone = document.querySelector(".shipping-phone").value;
-  const zipCode = Number(document.querySelector(".shipping-zipcode").value);
-  const address =
-    document.querySelector(".shipping-address").value +
-    document.querySelector(".detailedAddress").value;
+  const postcode = document.querySelector(".shipping-zipcode").value;
 
+  const zipAddress = document.querySelector(".shipping-address").value;
+  const detailedAddress = document.querySelector(".detailedAddress").value;
+
+  if (
+    name === "" ||
+    phone === "" ||
+    email === "" ||
+    shippingName === "" ||
+    shippingPhone === "" ||
+    postcode === "" ||
+    zipAddress === "" ||
+    detailedAddress === ""
+  ) {
+    alert("입력을 완료해주세요");
+    return;
+  }
+
+  const address = zipAddress + "," + detailedAddress;
   const totalPrice = Number(
     document.querySelector(".total-price").innerHTML.split("원")[0]
   );
@@ -43,6 +60,8 @@ async function pay() {
     products.push(product._id);
   }
 
+  const userId = localStorage.getItem("userId");
+
   const customer = {
     name,
     phone,
@@ -51,13 +70,22 @@ async function pay() {
   const delivery = {
     name: shippingName,
     phone: shippingPhone,
-    postcode: zipCode,
+    postcode,
     address,
   };
   const deliverStatus = false;
 
-  const data = { products, totalPrice, deliverStatus, customer, delivery };
-  console.log(data);
+  const data = {
+    products,
+    totalPrice,
+    deliverStatus,
+    customer,
+    delivery,
+    email: userId,
+  };
+
+  const token = localStorage.getItem("token");
+
   try {
     const response = await fetch(
       "http://kdt-sw-8-team02.elicecoding.com/api/v1/orders",
@@ -65,6 +93,7 @@ async function pay() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({ ...data }),
       }
@@ -72,9 +101,9 @@ async function pay() {
 
     console.log(response);
     if (response.ok) {
-      localStorage.setItem("cart", []);
+      localStorage.removeItem("cart");
       localStorage.removeItem("totalPrice");
-      // window.location.href = "/views/users/order/complete/complete.html";
+      window.location.href = URL.COMPLETE_URL;
     } else {
       throw new Error("실패");
     }

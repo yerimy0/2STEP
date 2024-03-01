@@ -1,3 +1,5 @@
+import URL from "../data/url";
+
 function createFooter() {
   const footer = document.getElementById("footer");
 
@@ -16,7 +18,7 @@ function createFooter() {
   const logo = document.createElement("div");
   logo.className = "logo";
   const a = document.createElement("a");
-  a.href = "/views/users/mainpages/mainpage.html";
+  a.href = URL.MAIN_PAGE_URL;
   const img = document.createElement("img");
   img.src = "/views/common/footer/2STEP.png";
   img.alt = "로고";
