@@ -28,10 +28,25 @@ async function pay() {
   const shippingName = document.querySelector(".shipping-name").value;
   const shippingPhone = document.querySelector(".shipping-phone").value;
   const zipCode = Number(document.querySelector(".shipping-zipcode").value);
-  const address =
-    document.querySelector(".shipping-address").value +
-    document.querySelector(".detailedAddress").value;
 
+  const zipAddress = document.querySelector(".shipping-address").value;
+  const detailedAddress = document.querySelector(".detailedAddress").value;
+
+  if (
+    name === "" ||
+    phone === "" ||
+    email === "" ||
+    shippingName === "" ||
+    shippingPhone === "" ||
+    zipCode === 0 ||
+    zipAddress === "" ||
+    detailedAddress === ""
+  ) {
+    alert("입력을 완료해주세요");
+    return;
+  }
+
+  const address = zipAddress + "," + detailedAddress;
   const totalPrice = Number(
     document.querySelector(".total-price").innerHTML.split("원")[0]
   );
