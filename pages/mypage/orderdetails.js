@@ -1,5 +1,7 @@
 import findProduct from "./findproduct";
 import orderDelete from "./orderdelete";
+import showOrderEditPage from "./ordereditor";
+import URL from "../common/data/url.js";
 
 const findOrders = async () => {
   try {
@@ -59,7 +61,7 @@ function showOrderHistory(orderData, productData) {
         </div>
         <div class="details-group">
           <h3>${productData[0].name} 외 ${productData.length - 1}</h3>
-          <p>${orderData.totalPrice}</p>
+          <p> ${orderData.totalPrice.toLocaleString()}원</p>
           <p class="delivery-status">${deliverStatus}</p>
         </div>
         <div class="button-group">
@@ -82,12 +84,18 @@ function showOrderHistory(orderData, productData) {
     // 주문 수정 버튼에 이벤트 리스너 추가
     document
       .querySelector("#edit-order-button")
-      .addEventListener("click", function () {});
+      .addEventListener("click", function () {
+        showOrderEditPage(orderData, productData, deliverStatus);
+      });
   } else {
     document.querySelector(
       ".main-content"
     ).innerHTML = `<div class="page-title">주문 내역이 존재하지 않습니다.</div>`;
   }
 }
+
+document.querySelector(".title").addEventListener("click", () => {
+  location.href = URL.MAIN_PAGE_URL;
+});
 
 export default showOrderHistory;
