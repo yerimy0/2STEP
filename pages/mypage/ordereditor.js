@@ -2,10 +2,6 @@ import showOrderHistory from "./orderdetails";
 
 // 주문 수정 버튼 클릭 시 주문 정보 수정 페이지 표시 함수
 
-document
-  .querySelectorAll(".order-button")[1]
-  .addEventListener("click", () => showOrderEditPage());
-
 // 주문 정보 수정 페이지 표시 함수
 function showOrderEditPage() {
   document.querySelector(".main-content").innerHTML = `
