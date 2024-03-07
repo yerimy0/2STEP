@@ -6,8 +6,13 @@ const category = new URLSearchParams(window.location.search).get("category");
 productListShow(category);
 
 function productListShow(category) {
+  showTitle(category);
   productCategory(category);
   productDivide(category);
+}
+
+function showTitle(category) {
+  document.title = category;
 }
 
 function productCategory(category) {

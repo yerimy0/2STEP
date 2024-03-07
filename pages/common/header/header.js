@@ -93,6 +93,8 @@ function userMenuCreate(item, loginSuccess) {
       e.preventDefault();
 
       localStorage.removeItem("token");
+      localStorage.removeItem("order");
+      localStorage.removeItem("products");
       location.reload();
     });
   }

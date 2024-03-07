@@ -13,6 +13,7 @@ function loadProductDetailPage() {
     (product) => product._id === productId
   );
 
+  document.title = selectedProduct.name;
   productShow(selectedProduct);
 }
 
